@@ -1,400 +1,901 @@
-# BlogNav 技术资源导航
+# AI Builders Digest 今日热点快报
 
-BlogNav 是一个面向开发者与技术研究人员的结构化外链资源汇总平台，专注于收录和分类高质量的技术博客、深度文章与工程实践文档。项目本身不生产内容，而是通过人工筛选与主题聚合的方式，为特定技术领域提供高价值的阅读入口。
+*报告生成时间：2026年07月07日15时10分48秒*
 
-项目定位为轻量级、可自托管的资源导航站，适用于个人开发者、技术团队内部知识库、技术社区内容推荐等场景。BlogNav 的核心价值在于将分散于各处的优质单篇文章按主题维度重新组织，降低信息发现成本，提升技术阅读的针对性。
+---
 
-## 功能概览
+## 一、国内时政
 
-**主题聚合浏览**：按编程语言、框架生态、工程实践、架构设计等维度对收录文章进行分类，支持快速筛选。
+### 美国防部整合软件采购体系，微软获96.9亿美元大额合同
 
-**全文标题检索**：基于文章标题与元信息提供关键词检索能力，帮助用户定位特定话题或技术点。
+来源：<code>www.blog.baoyd.cn/Article/3878484.shtml</code>
 
-**外链跳转追踪**：所有收录条目均为原始来源链接，平台仅提供索引服务，确保内容版权与归属性。
+### IDC数据显示，2026年Q1全球腕戴设备出货4705万台，同比增2.2%，华为、苹果、小米居前三
 
-**批量导入支持**：支持通过文本文件或结构化数据格式批量导入新的资源链接，便于团队协作维护。
+来源：<code>www.blog.zlwmu.cn/Article/0645.shtml</code>
 
-**收藏与标签系统**：用户可为已收录资源添加自定义标签，构建个人化的阅读清单。
+### 华为郑俊称，中美AI大模型差距仅2.7%，2月以来中国模型调用量持续超过美国
 
-**访问统计与热度排序**：记录各资源链接的点击频次，提供按热度排序的视图，辅助发现热门内容。
+来源：<code>www.blog.ipiye.cn/Article/9823871.shtml</code>
 
-**响应式布局**：页面适配桌面与移动端，满足不同设备下的浏览需求。
+### 华为运营商业务负责人杨扬表示，将AI深度融入主业提升ARPU，是运营商增收关键
 
-**开源可二次开发**：项目完全开源，提供清晰的代码结构与扩展接口，便于开发者定制功能或整合至现有系统。
+来源：<code>www.blog.baoyd.cn/Article/801939.shtml</code>
 
-## 应用场景
+### 雷鸟创新发布专业级AR眼镜GT系列，面向影视用途，起售价1899元
 
-技术团队内部知识库建设：团队技术负责人可将 BlogNav 部署为内部开发资源导航，统一团队技术学习路径，减少成员在信息检索上的时间消耗。每周或每月批量导入团队推荐的优质文章，形成持续积累的知识资产。
+来源：<code>www.blog.gnhku.cn/Article/493185.shtml</code>
 
-个人开发者日常阅读管理：独立开发者可使用 BlogNav 整理自己关注的技术领域文章，避免依赖浏览器书签的碎片化存储。按技术栈或项目阶段组织资源，配合检索功能快速回溯之前读过的关键技术文档。
+### 网易2026年Q1财报：净收入306亿元，研发支出45亿元
 
-技术社区内容推荐系统：技术博客、在线教育平台或开发者社区可基于 BlogNav 构建外部优质内容推荐模块，将本站收录的链接作为精选阅读列表展示给用户，丰富平台内容生态。
+来源：<code>www.blog.ipiye.cn/Article/4257.shtml</code>
 
-技术会议与培训资料汇总：在组织技术分享会或内部培训时，讲师可提前将相关背景资料通过 BlogNav 汇总成专题列表，参会者可集中访问，提升资料分发效率。
+### 华为何庭波称，基于韬定律的芯片可在14nm/7nm制程下实现近5nm/3nm性能，减少对EUV依赖
 
-## 快速开始
+来源：<code>www.blog.zlwmu.cn/Article/61745.shtml</code>
 
-以下指令适用于 Linux 与 macOS 环境，Windows 用户建议使用 WSL2 或 Git Bash。
+### 俄罗斯四颗军用卫星变轨，逼近为乌方提供情报的西方雷达侦察卫星
 
-```bash
-# 克隆仓库
-git clone https://github.com/your-org/blognav.git
-cd blognav
+来源：<code>www.blog.ipiye.cn/Article/55882.shtml</code>
 
-# 安装依赖（基于 Node.js 22 LTS）
-npm install
+### 消息称三星电子已展示全球首款5nm MRAM原型，计划2027年量产
 
-# 启动开发服务器，默认监听 3000 端口
-npm run dev
-```
+来源：<code>www.blog.gnhku.cn/Article/52879.shtml</code>
 
-访问 http://localhost:3000 即可本地预览站点。生产环境部署请参考 `docs/deployment.md`。
+### 苹果罕见上调Mac、iPad等多款产品售价，致股价创一年多最大单日跌幅
 
-## 安装要求
+来源：<code>www.blog.baoyd.cn/Article/902406.shtml</code>
 
-| 依赖组件 | 必需版本 | 说明 |
-|---|---|---|
-| Node.js | 22.x LTS 或更高 | 运行时环境，建议使用 nvm 管理版本 |
-| npm | 10.x 或更高 | 包管理器，随 Node.js 一并安装 |
-| SQLite | 3.45 或更高 | 内置数据存储引擎，用于资源索引与元信息管理 |
-| Git | 2.40 或更高 | 用于克隆仓库与版本管理 |
-| 现代浏览器 | Chrome 120+ / Firefox 120+ / Edge 120+ | 前端界面运行环境，需支持 ES2022 特性 |
+### OPPO Reno16系列正式发布，配备四主摄高清影像系统，享受补贴后最低仅需2999元。
 
-## 文档导航
+来源：<code>www.blog.ipiye.cn/Article/125604.shtml</code>
 
-| 层面 | 目录 | 回答的问题 |
-|---|---|---|
-| 用户手册 | `docs/user-guide.md` | 如何使用浏览、检索、收藏等功能；如何理解主题分类体系 |
-| 管理员手册 | `docs/admin-guide.md` | 如何批量导入链接；如何管理分类标签；如何查看访问统计 |
-| 开发者指南 | `docs/developer-guide.md` | 项目架构设计；数据模型说明；如何扩展新功能或整合第三方服务 |
-| 部署运维 | `docs/deployment.md` | 生产环境部署配置；环境变量说明；性能调优与日志管理 |
+### 比亚迪唐L系列迎来第五次OTA升级，新增19项功能，涉及续航、智能驾驶及生态互联体验的优化。
 
-## 资源列表
+来源：<code>www.blog.ipiye.cn/Article/70968.shtml</code>
 
-以下为 BlogNav 当前收录的全部外链资源，按来源域名归类。所有链接均保持用户提供的原始格式，未做任何协议、大小写或路径改写。
+### 李斌指出，48V集成式主动悬架在代际优势上明显领先于400/800V分立方案。
 
-### 主域名资源
+来源：<code>www.blog.gnhku.cn/Article/8137575.shtml</code>
 
-http://www.blog.nzfnve.cn/Article/details/1231281.sHtML
-http://www.blog.nzfnve.cn/Article/details/97898.sHtML
-http://www.blog.nzfnve.cn/Article/details/1865.sHtML
-http://www.blog.nzfnve.cn/Article/details/128145.sHtML
-http://www.blog.nzfnve.cn/Article/details/930010.sHtML
-http://www.blog.nzfnve.cn/Article/details/106984.sHtML
-http://www.blog.nzfnve.cn/Article/details/62541.sHtML
-http://www.blog.nzfnve.cn/Article/details/2184332.sHtML
-http://www.blog.nzfnve.cn/Article/details/6461.sHtML
-http://www.blog.nzfnve.cn/Article/details/6858.sHtML
-http://www.blog.nzfnve.cn/Article/details/83572.sHtML
-http://www.blog.nzfnve.cn/Article/details/152704.sHtML
-http://www.blog.nzfnve.cn/Article/details/04307.sHtML
-http://www.blog.nzfnve.cn/Article/details/081435.sHtML
-http://www.blog.nzfnve.cn/Article/details/6426.sHtML
-http://www.blog.nzfnve.cn/Article/details/46271.sHtML
-http://www.blog.nzfnve.cn/Article/details/6840.sHtML
-http://www.blog.nzfnve.cn/Article/details/7412.sHtML
-http://www.blog.nzfnve.cn/Article/details/6483751.sHtML
-http://www.blog.nzfnve.cn/Article/details/9263227.sHtML
-http://www.blog.nzfnve.cn/Article/details/0673.sHtML
-http://www.blog.nzfnve.cn/Article/details/7646.sHtML
-http://www.blog.nzfnve.cn/Article/details/8115.sHtML
-http://www.blog.nzfnve.cn/Article/details/3918137.sHtML
-http://www.blog.nzfnve.cn/Article/details/415091.sHtML
-http://www.blog.nzfnve.cn/Article/details/2323427.sHtML
-http://www.blog.nzfnve.cn/Article/details/0903674.sHtML
-http://www.blog.nzfnve.cn/Article/details/70297.sHtML
-http://www.blog.nzfnve.cn/Article/details/293319.sHtML
-http://www.blog.nzfnve.cn/Article/details/8564847.sHtML
-http://www.blog.nzfnve.cn/Article/details/766322.sHtML
-http://www.blog.nzfnve.cn/Article/details/305721.sHtML
-http://www.blog.nzfnve.cn/Article/details/72911.sHtML
-http://www.blog.nzfnve.cn/Article/details/9439.sHtML
-http://www.blog.nzfnve.cn/Article/details/061750.sHtML
-http://www.blog.nzfnve.cn/Article/details/5301078.sHtML
-http://www.blog.nzfnve.cn/Article/details/3946.sHtML
-http://www.blog.nzfnve.cn/Article/details/6709157.sHtML
-http://www.blog.nzfnve.cn/Article/details/16716.sHtML
-http://www.blog.nzfnve.cn/Article/details/141197.sHtML
-http://www.blog.nzfnve.cn/Article/details/580742.sHtML
-http://www.blog.nzfnve.cn/Article/details/99565.sHtML
-http://www.blog.nzfnve.cn/Article/details/68467.sHtML
-http://www.blog.nzfnve.cn/Article/details/3552799.sHtML
-http://www.blog.nzfnve.cn/Article/details/7638256.sHtML
-http://www.blog.nzfnve.cn/Article/details/18684.sHtML
-http://www.blog.nzfnve.cn/Article/details/74054.sHtML
-http://www.blog.nzfnve.cn/Article/details/1402.sHtML
-http://www.blog.nzfnve.cn/Article/details/27213.sHtML
-http://www.blog.nzfnve.cn/Article/details/909777.sHtML
-http://www.blog.nzfnve.cn/Article/details/77447.sHtML
-http://www.blog.nzfnve.cn/Article/details/772211.sHtML
-http://www.blog.nzfnve.cn/Article/details/8390.sHtML
-http://www.blog.nzfnve.cn/Article/details/2821789.sHtML
-http://www.blog.nzfnve.cn/Article/details/6919.sHtML
-http://www.blog.nzfnve.cn/Article/details/83040.sHtML
-http://www.blog.nzfnve.cn/Article/details/7577.sHtML
-http://www.blog.nzfnve.cn/Article/details/380352.sHtML
-http://www.blog.nzfnve.cn/Article/details/375076.sHtML
-http://www.blog.nzfnve.cn/Article/details/68544.sHtML
-http://www.blog.nzfnve.cn/Article/details/5522755.sHtML
-http://www.blog.nzfnve.cn/Article/details/4668.sHtML
-http://www.blog.nzfnve.cn/Article/details/3945.sHtML
-http://www.blog.nzfnve.cn/Article/details/21530.sHtML
-http://www.blog.nzfnve.cn/Article/details/1622603.sHtML
-http://www.blog.nzfnve.cn/Article/details/1354.sHtML
-http://www.blog.nzfnve.cn/Article/details/426941.sHtML
-http://www.blog.nzfnve.cn/Article/details/309106.sHtML
-http://www.blog.nzfnve.cn/Article/details/04686.sHtML
-http://www.blog.nzfnve.cn/Article/details/2101.sHtML
-http://www.blog.nzfnve.cn/Article/details/8736158.sHtML
-http://www.blog.nzfnve.cn/Article/details/1497.sHtML
-http://www.blog.nzfnve.cn/Article/details/562256.sHtML
-http://www.blog.nzfnve.cn/Article/details/1575.sHtML
-http://www.blog.nzfnve.cn/Article/details/6707802.sHtML
-http://www.blog.nzfnve.cn/Article/details/3119.sHtML
-http://www.blog.nzfnve.cn/Article/details/3570.sHtML
-http://www.blog.nzfnve.cn/Article/details/8444.sHtML
-http://www.blog.nzfnve.cn/Article/details/6973689.sHtML
-http://www.blog.nzfnve.cn/Article/details/3158907.sHtML
-http://www.blog.nzfnve.cn/Article/details/1977.sHtML
-http://www.blog.nzfnve.cn/Article/details/0936656.sHtML
-http://www.blog.nzfnve.cn/Article/details/43436.sHtML
-http://www.blog.nzfnve.cn/Article/details/90450.sHtML
-http://www.blog.nzfnve.cn/Article/details/143969.sHtML
-http://www.blog.nzfnve.cn/Article/details/9178554.sHtML
-http://www.blog.nzfnve.cn/Article/details/877291.sHtML
-http://www.blog.nzfnve.cn/Article/details/611957.sHtML
-http://www.blog.nzfnve.cn/Article/details/3187.sHtML
-http://www.blog.nzfnve.cn/Article/details/4330.sHtML
-http://www.blog.nzfnve.cn/Article/details/6234.sHtML
-http://www.blog.nzfnve.cn/Article/details/851651.sHtML
-http://www.blog.nzfnve.cn/Article/details/282191.sHtML
-http://www.blog.nzfnve.cn/Article/details/1469.sHtML
-http://www.blog.nzfnve.cn/Article/details/370806.sHtML
-http://www.blog.nzfnve.cn/Article/details/36751.sHtML
-http://www.blog.nzfnve.cn/Article/details/304069.sHtML
-http://www.blog.nzfnve.cn/Article/details/803147.sHtML
-http://www.blog.nzfnve.cn/Article/details/397826.sHtML
-http://www.blog.nzfnve.cn/Article/details/73786.sHtML
-http://www.blog.nzfnve.cn/Article/details/3652958.sHtML
-http://www.blog.nzfnve.cn/Article/details/3734093.sHtML
-http://www.blog.nzfnve.cn/Article/details/394566.sHtML
-http://www.blog.nzfnve.cn/Article/details/91405.sHtML
-http://www.blog.nzfnve.cn/Article/details/235694.sHtML
-http://www.blog.nzfnve.cn/Article/details/578284.sHtML
-http://www.blog.nzfnve.cn/Article/details/79708.sHtML
-http://www.blog.nzfnve.cn/Article/details/67553.sHtML
-http://www.blog.nzfnve.cn/Article/details/7543.sHtML
-http://www.blog.nzfnve.cn/Article/details/7547292.sHtML
-http://www.blog.nzfnve.cn/Article/details/497804.sHtML
-http://www.blog.nzfnve.cn/Article/details/1264.sHtML
-http://www.blog.nzfnve.cn/Article/details/92129.sHtML
-http://www.blog.nzfnve.cn/Article/details/5266.sHtML
-http://www.blog.nzfnve.cn/Article/details/4516848.sHtML
-http://www.blog.nzfnve.cn/Article/details/4587500.sHtML
-http://www.blog.nzfnve.cn/Article/details/7907469.sHtML
-http://www.blog.nzfnve.cn/Article/details/5322.sHtML
-http://www.blog.nzfnve.cn/Article/details/3679.sHtML
-http://www.blog.nzfnve.cn/Article/details/2797.sHtML
-http://www.blog.nzfnve.cn/Article/details/655726.sHtML
-http://www.blog.nzfnve.cn/Article/details/5068810.sHtML
-http://www.blog.nzfnve.cn/Article/details/453279.sHtML
-http://www.blog.nzfnve.cn/Article/details/864769.sHtML
-http://www.blog.nzfnve.cn/Article/details/612185.sHtML
-http://www.blog.nzfnve.cn/Article/details/65664.sHtML
-http://www.blog.nzfnve.cn/Article/details/311930.sHtML
-http://www.blog.nzfnve.cn/Article/details/031994.sHtML
-http://www.blog.nzfnve.cn/Article/details/38521.sHtML
-http://www.blog.nzfnve.cn/Article/details/2313.sHtML
-http://www.blog.nzfnve.cn/Article/details/93653.sHtML
-http://www.blog.nzfnve.cn/Article/details/864439.sHtML
-http://www.blog.nzfnve.cn/Article/details/96341.sHtML
-http://www.blog.nzfnve.cn/Article/details/19759.sHtML
-http://www.blog.nzfnve.cn/Article/details/3006.sHtML
-http://www.blog.nzfnve.cn/Article/details/1822635.sHtML
-http://www.blog.nzfnve.cn/Article/details/413715.sHtML
-http://www.blog.nzfnve.cn/Article/details/975807.sHtML
-http://www.blog.nzfnve.cn/Article/details/11326.sHtML
-http://www.blog.nzfnve.cn/Article/details/035258.sHtML
-http://www.blog.nzfnve.cn/Article/details/34773.sHtML
-http://www.blog.nzfnve.cn/Article/details/6350976.sHtML
-http://www.blog.nzfnve.cn/Article/details/2657493.sHtML
-http://www.blog.nzfnve.cn/Article/details/2082.sHtML
-http://www.blog.nzfnve.cn/Article/details/5747.sHtML
-http://www.blog.nzfnve.cn/Article/details/2204.sHtML
-http://www.blog.nzfnve.cn/Article/details/573713.sHtML
-http://www.blog.nzfnve.cn/Article/details/5938.sHtML
-http://www.blog.nzfnve.cn/Article/details/841650.sHtML
-http://www.blog.nzfnve.cn/Article/details/1080.sHtML
-http://www.blog.nzfnve.cn/Article/details/8236.sHtML
-http://www.blog.nzfnve.cn/Article/details/985041.sHtML
-http://www.blog.nzfnve.cn/Article/details/468285.sHtML
-http://www.blog.nzfnve.cn/Article/details/5925735.sHtML
-http://www.blog.nzfnve.cn/Article/details/193741.sHtML
-http://www.blog.nzfnve.cn/Article/details/98640.sHtML
-http://www.blog.nzfnve.cn/Article/details/0634.sHtML
-http://www.blog.nzfnve.cn/Article/details/7842.sHtML
-http://www.blog.nzfnve.cn/Article/details/63211.sHtML
-http://www.blog.nzfnve.cn/Article/details/550961.sHtML
-http://www.blog.nzfnve.cn/Article/details/57257.sHtML
-http://www.blog.nzfnve.cn/Article/details/510119.sHtML
-http://www.blog.nzfnve.cn/Article/details/848190.sHtML
-http://www.blog.nzfnve.cn/Article/details/0555712.sHtML
-http://www.blog.nzfnve.cn/Article/details/6614.sHtML
-http://www.blog.nzfnve.cn/Article/details/13649.sHtML
-http://www.blog.nzfnve.cn/Article/details/3315.sHtML
-http://www.blog.nzfnve.cn/Article/details/5578.sHtML
-http://www.blog.nzfnve.cn/Article/details/505040.sHtML
-http://www.blog.nzfnve.cn/Article/details/3126492.sHtML
-http://www.blog.nzfnve.cn/Article/details/1881383.sHtML
-http://www.blog.nzfnve.cn/Article/details/4653099.sHtML
-http://www.blog.nzfnve.cn/Article/details/7030869.sHtML
-http://www.blog.nzfnve.cn/Article/details/068777.sHtML
-http://www.blog.nzfnve.cn/Article/details/167079.sHtML
-http://www.blog.nzfnve.cn/Article/details/4611283.sHtML
-http://www.blog.nzfnve.cn/Article/details/0928.sHtML
-http://www.blog.nzfnve.cn/Article/details/0336.sHtML
-http://www.blog.nzfnve.cn/Article/details/866597.sHtML
-http://www.blog.nzfnve.cn/Article/details/4896277.sHtML
-http://www.blog.nzfnve.cn/Article/details/479257.sHtML
-http://www.blog.nzfnve.cn/Article/details/96867.sHtML
-http://www.blog.nzfnve.cn/Article/details/386333.sHtML
-http://www.blog.nzfnve.cn/Article/details/5295389.sHtML
-http://www.blog.nzfnve.cn/Article/details/590298.sHtML
-http://www.blog.nzfnve.cn/Article/details/063794.sHtML
-http://www.blog.nzfnve.cn/Article/details/872363.sHtML
-http://www.blog.nzfnve.cn/Article/details/1758891.sHtML
-http://www.blog.nzfnve.cn/Article/details/06664.sHtML
-http://www.blog.nzfnve.cn/Article/details/6247.sHtML
-http://www.blog.nzfnve.cn/Article/details/55690.sHtML
-http://www.blog.nzfnve.cn/Article/details/207645.sHtML
-http://www.blog.nzfnve.cn/Article/details/146561.sHtML
-http://www.blog.nzfnve.cn/Article/details/2214.sHtML
-http://www.blog.nzfnve.cn/Article/details/1178.sHtML
-http://www.blog.nzfnve.cn/Article/details/00429.sHtML
-http://www.blog.nzfnve.cn/Article/details/3368.sHtML
-http://www.blog.nzfnve.cn/Article/details/595175.sHtML
-http://www.blog.nzfnve.cn/Article/details/060007.sHtML
-http://www.blog.nzfnve.cn/Article/details/8507.sHtML
-http://www.blog.nzfnve.cn/Article/details/7981884.sHtML
-http://www.blog.nzfnve.cn/Article/details/594079.sHtML
-http://www.blog.nzfnve.cn/Article/details/31707.sHtML
-http://www.blog.nzfnve.cn/Article/details/88158.sHtML
-http://www.blog.nzfnve.cn/Article/details/4114796.sHtML
-http://www.blog.nzfnve.cn/Article/details/732573.sHtML
-http://www.blog.nzfnve.cn/Article/details/2299.sHtML
-http://www.blog.nzfnve.cn/Article/details/7547163.sHtML
-http://www.blog.nzfnve.cn/Article/details/933306.sHtML
-http://www.blog.nzfnve.cn/Article/details/614745.sHtML
-http://www.blog.nzfnve.cn/Article/details/3774561.sHtML
-http://www.blog.nzfnve.cn/Article/details/773656.sHtML
-http://www.blog.nzfnve.cn/Article/details/95267.sHtML
-http://www.blog.nzfnve.cn/Article/details/9812.sHtML
-http://www.blog.nzfnve.cn/Article/details/7412303.sHtML
-http://www.blog.nzfnve.cn/Article/details/68010.sHtML
-http://www.blog.nzfnve.cn/Article/details/5739.sHtML
-http://www.blog.nzfnve.cn/Article/details/5060905.sHtML
-http://www.blog.nzfnve.cn/Article/details/4830145.sHtML
-http://www.blog.nzfnve.cn/Article/details/6751043.sHtML
-http://www.blog.nzfnve.cn/Article/details/9234.sHtML
-http://www.blog.nzfnve.cn/Article/details/8554306.sHtML
-http://www.blog.nzfnve.cn/Article/details/1703.sHtML
-http://www.blog.nzfnve.cn/Article/details/3883438.sHtML
-http://www.blog.nzfnve.cn/Article/details/93733.sHtML
-http://www.blog.nzfnve.cn/Article/details/4358.sHtML
-http://www.blog.nzfnve.cn/Article/details/178447.sHtML
-http://www.blog.nzfnve.cn/Article/details/20261.sHtML
-http://www.blog.nzfnve.cn/Article/details/34122.sHtML
-http://www.blog.nzfnve.cn/Article/details/2992267.sHtML
-http://www.blog.nzfnve.cn/Article/details/33312.sHtML
-http://www.blog.nzfnve.cn/Article/details/449327.sHtML
-http://www.blog.nzfnve.cn/Article/details/6003396.sHtML
-http://www.blog.nzfnve.cn/Article/details/4739.sHtML
-http://www.blog.nzfnve.cn/Article/details/2180525.sHtML
-http://www.blog.nzfnve.cn/Article/details/5260.sHtML
-http://www.blog.nzfnve.cn/Article/details/4415.sHtML
-http://www.blog.nzfnve.cn/Article/details/8773396.sHtML
-http://www.blog.nzfnve.cn/Article/details/1502550.sHtML
-http://www.blog.nzfnve.cn/Article/details/60021.sHtML
-http://www.blog.nzfnve.cn/Article/details/7976377.sHtML
-http://www.blog.nzfnve.cn/Article/details/600789.sHtML
-http://www.blog.nzfnve.cn/Article/details/8925442.sHtML
-http://www.blog.nzfnve.cn/Article/details/37771.sHtML
-http://www.blog.nzfnve.cn/Article/details/7077484.sHtML
-http://www.blog.nzfnve.cn/Article/details/8085425.sHtML
-http://www.blog.nzfnve.cn/Article/details/72829.sHtML
-http://www.blog.nzfnve.cn/Article/details/6599.sHtML
-http://www.blog.nzfnve.cn/Article/details/832707.sHtML
-http://www.blog.nzfnve.cn/Article/details/4831.sHtML
+### 华为计划在WAIC 2026首次公开展示Atlas 950 SuperPoD真机，这是业内规模最大的超节点设备。
 
-## 项目结构
+来源：<code>www.blog.baoyd.cn/Article/08584.shtml</code>
 
-```
-blognav/
-├── src/
-│   ├── core/                         # 核心数据引擎与索引管理
-│   │   ├── indexer.js                # 资源链接解析与元信息提取
-│   │   ├── storage.js                # SQLite 数据读写接口
-│   │   └── taxonomy.js               # 主题分类体系与标签映射
-│   ├── web/                          # 前端应用源码
-│   │   ├── pages/                    # 页面路由组件
-│   │   │   ├── home.ejs              # 首页聚合视图
-│   │   │   ├── detail.ejs            # 单文章详情视图
-│   │   │   └── search.ejs            # 检索结果视图
-│   │   ├── static/                   # 静态资源
-│   │   │   ├── css/                  # 样式表
-│   │   │   ├── js/                   # 前端交互脚本
-│   │   │   └── assets/               # 图片与字体文件
-│   │   └── layouts/                  # 页面模板布局
-│   ├── server/                       # HTTP 服务层
-│   │   ├── app.js                    # Express 应用主入口
-│   │   ├── routes.js                 # 路由定义
-│   │   └── middleware.js             # 请求预处理与日志中间件
-│   ├── cli/                          # 命令行工具
-│   │   ├── import.js                 # 批量导入外部链接列表
-│   │   ├── export.js                 # 导出当前索引数据
-│   │   └── stats.js                  # 统计信息输出
-│   └── config/                       # 配置管理
-│       ├── default.js                # 默认配置参数
-│       └── custom.example.js         # 用户自定义配置模板
-├── docs/                             # 完整项目文档
-├── data/                             # SQLite 数据库文件存放目录（自动生成）
-├── tests/                            # 单元测试与集成测试
-├── scripts/                          # 开发辅助脚本
-├── package.json                      # Node.js 项目清单
-├── .env.example                      # 环境变量模板
-└── README.md                         # 本文件
-```
+### 全新日产Skyline开发周期仅用26个月，预计今年冬季首次亮相。
 
-## 贡献指南
+来源：<code>www.blog.gnhku.cn/Article/97602.shtml</code>
 
-欢迎开发者参与 BlogNav 的改进与维护。贡献流程如下：
+### 据爆料，华为Mate 80系列累计销量已突破700万台，正全力冲击千万台销量目标。
 
-1. 在 GitHub 仓库的 Issues 列表中查找标记为 "help wanted" 或 "good first issue" 的任务，或提交新 Issue 描述您发现的缺陷或建议的功能。提交前请检索现有 Issue 避免重复。
+来源：<code>www.blog.baoyd.cn/Article/208367.shtml</code>
 
-2. Fork 本仓库至您的个人账户，在您的副本中创建新分支。分支命名建议遵循 `feature/功能简述` 或 `fix/问题简述` 的格式，以便于追溯。
+### 英伟达计划携新款芯片进军PC市场，将与英特尔、AMD展开正面竞争。
 
-3. 完成代码修改后，确保通过全部现有单元测试（`npm run test`），并为新增功能补充对应的测试用例。代码风格需符合项目配置的 ESLint 规则（`npm run lint` 无报错）。
+来源：<code>www.blog.baoyd.cn/Article/119391.shtml</code>
 
-4. 提交 Pull Request 至主仓库的 main 分支，在 PR 描述中清晰说明改动内容、影响范围以及相关的 Issue 编号。PR 至少需要一名项目维护者审核通过后方可合并。
+### 第一季度手机芯片排名公布：联发科位居第一，华为海思排名第六。
 
-5. 文档更新：若您的改动涉及用户可见的功能变化或配置变更，请同步更新 `docs/` 目录下的对应文档，并确保 README 中的示例与说明保持准确。
+来源：<code>www.blog.gnhku.cn/Article/61928.shtml</code>
 
-## 常见问题
+### 支付宝就AI版内测邀请码被倒卖一事作出回应，提醒用户警惕诈骗，避免财产损失。
 
-**问：BlogNav 是否存储或缓存第三方文章的内容副本？**
+来源：<code>www.blog.baoyd.cn/Article/4634.shtml</code>
 
-答：BlogNav 仅存储文章标题、来源 URL 和元信息（如作者、发布时间、分类标签）。平台不抓取、不缓存、不代理任何第三方文章正文内容。所有点击跳转均直接重定向至原始来源链接，内容的完整性与可用性由源站点负责。若源站点内容被删除或迁移，BlogNav 无法恢复。
+### 慧与盘后股价显著上涨，主要源于市场预期未来18个月服务器需求将持续强劲。
 
-**问：如何批量更新已收录的链接分类或标签？**
+来源：<code>www.blog.ipiye.cn/Article/0759.shtml</code>
 
-答：使用命令行工具 `npm run import -- --update` 配合 CSV 或 JSON 格式的更新文件即可批量修改已有记录的元信息。更新文件需包含每条记录的 ID 或 URL 作为匹配键，以及需要修改的字段。具体格式说明请参考 `docs/admin-guide.md` 中的批量操作章节。不建议直接操作 SQLite 数据库文件进行修改。
+### 华为“韬定律”引发网络广泛讨论，新的产业机遇正在逐步显现。
 
-**问：项目是否支持多用户或权限管理？**
+来源：<code>www.blog.zlwmu.cn/Article/86542.shtml</code>
 
-答：当前版本（v1.x）定位为单用户或小团队私有部署场景，不内置多用户登录与权限管理功能。若需在公开网络中部署，建议通过反向代理（如 nginx）配置基础访问认证，或使用 Cloudflare Access 等第三方鉴权服务。后续版本将视社区需求考虑增加轻量级的多角色支持。
+### ASML向美方表明，中国无法获得其最先进的EUV光刻机设备。
 
-## 许可证
+来源：<code>www.blog.gnhku.cn/Article/175098.shtml</code>
 
-MIT
+### 五粮液世界杯联名款产品遭抢购，整箱中开出隐藏款的概率仅1%，二手价格已炒至原价5倍以上。
 
-> 外链数量: 250 | 生成时间: 2026-07-05 16:28:23
+来源：<code>www.blog.baoyd.cn/Article/87850.shtml</code>
+
+### 全球算力供应链正经历新一轮重构与调整。
+
+来源：<code>www.blog.gnhku.cn/Article/05526.shtml</code>
+
+### 环球音乐拒绝比尔·阿克曼旗下公司的收购提议，称报价大幅低估了自身价值。
+
+来源：<code>www.blog.baoyd.cn/Article/72052.shtml</code>
+
+### 谷歌DeepMind向独立制片公司A24投资7500万美元，合作开发影视制作AI工具。
+
+来源：<code>www.blog.gnhku.cn/Article/6850184.shtml</code>
+
+### 硕一鲲鹏CL6N风冷散热器首发价129元起，顶部配备数显屏，可支持260W TDP散热能力。
+
+来源：<code>www.blog.zlwmu.cn/Article/4956.shtml</code>
+
+### 养元饮品被视为“存储影子股”，在主营业务承压之际持续加码投资，双轮驱动能否成为增长新动力？
+
+来源：<code>www.blog.ipiye.cn/Article/7246.shtml</code>
+
+### TP-Link在深圳启动大规模人员优化，员工拒绝接受转签安排，曾称霸路由市场的品牌现已落后于华为和小米。
+
+来源：<code>www.blog.zlwmu.cn/Article/690984.shtml</code>
+
+### vivo S60配备4K原生实况影像技术，声称将重塑Live拍摄体验标准。
+
+来源：<code>www.blog.zlwmu.cn/Article/9651.shtml</code>
+
+### 东风奕派M8于粤港澳车展首发亮相，搭载华为乾崑智能方案，预计Q3开启正式销售。
+
+来源：<code>www.blog.gnhku.cn/Article/479654.shtml</code>
+
+### 亚马逊计划2030年前在印度追加130亿美元投资，主要聚焦人工智能领域。
+
+来源：<code>www.blog.baoyd.cn/Article/9754493.shtml</code>
+
+### 华为Mate 80系列首周销量超21万台，累计已近千万，持续领跑国产高端手机市场。
+
+来源：<code>www.blog.gnhku.cn/Article/0988540.shtml</code>
+
+### 特斯拉被指私自变更后台合同条款，旧版FSD协议内容现已无法访问。
+
+来源：<code>www.blog.gnhku.cn/Article/9782233.shtml</code>
+
+### 全球首款x86处理器英特尔8086迎来48周年纪念，曾独自改写个人电脑发展历程。
+
+来源：<code>www.blog.ipiye.cn/Article/51494.shtml</code>
+
+### IDC发布追觅扫地机器人全球销量及销售额最新统计报告。
+
+来源：<code>www.blog.baoyd.cn/Article/090104.shtml</code>
+
+### 有消息称OpenAI计划大幅下调价格，以与Anthropic展开用户争夺。
+
+来源：<code>www.blog.zlwmu.cn/Article/26279.shtml</code>
+
+### 大疆就Pocket 4系列发售争议作出回应，称已锁定部分黄牛并报案处理。
+
+来源：<code>www.blog.baoyd.cn/Article/85999.shtml</code>
+
+### SpaceX创下IPO融资纪录之后，正迎来上市以来的首次重大考验。
+
+来源：<code>www.blog.ipiye.cn/Article/11378.shtml</code>
+
+### 易鸿智能申请港股IPO，近七成收入来自宁德时代，存货周转远高于行业均值，销售和研发数据公开信息存在矛盾。
+
+来源：<code>www.blog.gnhku.cn/Article/060368.shtml</code>
+
+### 墨西哥政府扶持的本土新势力Olinia正式亮相，首款车型售价8600美元。
+
+来源：<code>www.blog.gnhku.cn/Article/5648.shtml</code>
+
+### 得物与微信达成战略合作，将共同推进AI Agent的联合研发。
+
+来源：<code>www.blog.zlwmu.cn/Article/6603.shtml</code>
+
+### 余承东透露，鸿蒙智行首款车型问界M5计划于明年秋季迎来全新换代。
+
+来源：<code>www.blog.ipiye.cn/Article/3566070.shtml</code>
+
+### 迅雷发布2026年第一季度财报，总营收达9860万美元，同比增幅54.1%。
+
+来源：<code>www.blog.gnhku.cn/Article/3564148.shtml</code>
+
+## 二、民生社会
+
+### Siri AI上线全新自动校正功能，显著提升输入准确率。
+
+来源：<code>www.blog.zlwmu.cn/Article/5507065.shtml</code>
+
+### 天猫618大促定于5月21日正式启动开卖活动。
+
+来源：<code>www.blog.gnhku.cn/Article/7752249.shtml</code>
+
+### 多点数智与灵心巧手携手创立灵美智能公司。
+
+来源：<code>www.blog.zlwmu.cn/Article/9258.shtml</code>
+
+### 据传豆包将在6月下旬开启收费模式，并加快与抖音电商的业务融合。
+
+来源：<code>www.blog.ipiye.cn/Article/0096.shtml</code>
+
+### NBBOSS正式推出AI决策机器人R1。
+
+来源：<code>www.blog.ipiye.cn/Article/036290.shtml</code>
+
+### 市值突破万亿美元之后，SK海力士被曝最快于8月赴美上市。
+
+来源：<code>www.blog.zlwmu.cn/Article/43646.shtml</code>
+
+### 面壁智能联合清华等机构，开源国内首个基于华为昇腾训练的1.58-bit端侧大模型BitCPM-CANN。
+
+来源：<code>www.blog.zlwmu.cn/Article/482513.shtml</code>
+
+### 比亚迪发布全能智能体迪迪虾，实现手机生态与Agent生态100%兼容。
+
+来源：<code>www.blog.gnhku.cn/Article/045529.shtml</code>
+
+### 微软AI亚太总裁张祺新书发布，提出“OPE”理念，阐释单人即系统的概念。
+
+来源：<code>www.blog.gnhku.cn/Article/4555160.shtml</code>
+
+### Anthropic有望首次实现单季盈利，营收增幅显著。
+
+来源：<code>www.blog.gnhku.cn/Article/88588.shtml</code>
+
+### 油价波动引发汽车后市场涨价潮，京东养车宣布成立618保供联盟，联合品牌稳定价格保障供应。
+
+来源：<code>www.blog.baoyd.cn/Article/5472077.shtml</code>
+
+### 支付宝AI支付交易笔数突破3亿，你会放心让AI管钱吗？
+
+来源：<code>www.blog.baoyd.cn/Article/064705.shtml</code>
+
+### 小米Q1业绩会实录：手机价格力求企稳，汽车交付目标全年有望实现。
+
+来源：<code>www.blog.baoyd.cn/Article/3138.shtml</code>
+
+### Gartner孙志勇表示，AI原生企业营收能力为传统厂商两倍，智能体生态正逐步取代搜索引擎。
+
+来源：<code>www.blog.baoyd.cn/Article/69445.shtml</code>
+
+### 富士通客户端计算推出仅重908克的FMV U59-L2笔记本。
+
+来源：<code>www.blog.zlwmu.cn/Article/89153.shtml</code>
+
+### 北森全面转向AI，发布一站式AI HR专家平台Mavens，计划两年内投入10亿元用于AI产品及行业内容研发。
+
+来源：<code>www.blog.gnhku.cn/Article/7962.shtml</code>
+
+### 芯片双雄互有攻防：英伟达进军PC领域，英特尔谋划推出平价AI处理器。
+
+来源：<code>www.blog.gnhku.cn/Article/8507.shtml</code>
+
+### 美国拟取消无人车强制刹车踏板规定，为Robotaxi大规模商用扫清障碍。
+
+来源：<code>www.blog.gnhku.cn/Article/5028206.shtml</code>
+
+### 果纳半导体冲刺港股IPO：高溢价收购亏损公司无业绩承诺，股权激励覆盖多名外部顾问。
+
+来源：<code>www.blog.ipiye.cn/Article/41220.shtml</code>
+
+### 小鹏机器人业务重构组织架构，新设九个二级部门，何小鹏亲自挂帅产品部负责人。
+
+来源：<code>www.blog.baoyd.cn/Article/36528.shtml</code>
+
+### 长城炮新版本起售价定为16.68万元，NEDC工况下综合续航达到1081公里
+
+来源：<code>www.blog.zlwmu.cn/Article/35365.shtml</code>
+
+### 赛力斯携手字节跳动旗下孵化新品牌，首款跨界车型计划6月亮相，其智能驾驶方案并未采用华为技术
+
+来源：<code>www.blog.zlwmu.cn/Article/4836.shtml</code>
+
+### 微博第一季度营收达4.213亿美元，同比增长6.2%，月活跃用户数量为5.62亿
+
+来源：<code>www.blog.baoyd.cn/Article/0543.shtml</code>
+
+### 去年年报显示7家乳企出现亏损，其中海融科技、三元股份和光明乳业的净利率下滑幅度较为显著
+
+来源：<code>www.blog.baoyd.cn/Article/6324.shtml</code>
+
+### 针对豆包语音大模型将通过OTA升级的传闻，特斯拉客服回应称官方尚未予以确认
+
+来源：<code>www.blog.ipiye.cn/Article/736350.shtml</code>
+
+### 英伟达第一季度营收高达816亿美元，同比暴涨85%，其中数据中心业务贡献752亿美元，同时宣布新增800亿美元回购计划
+
+来源：<code>www.blog.gnhku.cn/Article/6964.shtml</code>
+
+### 对比亚迪的重新估值，核心着眼点在于其智能驾驶技术领域
+
+来源：<code>www.blog.baoyd.cn/Article/2701401.shtml</code>
+
+### 雷军表示，小米YU7 GT参与纽博格林赛道测试极具战略意义，即便尚未完美但其价值不容小觑
+
+来源：<code>www.blog.baoyd.cn/Article/071122.shtml</code>
+
+### 神州租车公布2026年发展战略，目标是构建一站式自驾出行综合服务平台
+
+来源：<code>www.blog.ipiye.cn/Article/20393.shtml</code>
+
+### 中国电信董事长柯瑞文指出，AI时代云网宽带正从流量经营转向Token经营，将引发产业价值深度变革
+
+来源：<code>www.blog.baoyd.cn/Article/1575268.shtml</code>
+
+### 嫦娥七号计划于今年下半年发射，后续还将实施梦舟载人飞船和揽月着陆器的首次飞行任务
+
+来源：<code>www.blog.ipiye.cn/Article/47011.shtml</code>
+
+### 加拿大通过立法，禁止16岁以下青少年使用社交媒体，并强化对AI聊天机器人的监管措施
+
+来源：<code>www.blog.ipiye.cn/Article/8981.shtml</code>
+
+### 针对数据中心基建热潮的调研显示，布局优化与成本控制并行推进，算电协同已成为主要瓶颈
+
+来源：<code>www.blog.zlwmu.cn/Article/9340603.shtml</code>
+
+### 华为正式发布鸿蒙智行智界RX官方图片，该车配备四颗激光雷达及巨鲸电池，预计秋季正式上市
+
+来源：<code>www.blog.baoyd.cn/Article/23504.shtml</code>
+
+### 面壁智能等机构开源基于昇腾平台训练的1.58位端侧大模型BitCPM-CANN，这一成果在业内尚属首次
+
+来源：<code>www.blog.zlwmu.cn/Article/20640.shtml</code>
+
+### 国金证券计算机与电子团队关注电容板块，提出“电RAM”新概念，并列举了相关受益标的
+
+来源：<code>www.blog.ipiye.cn/Article/7640242.shtml</code>
+
+### 马斯克通过财务操作，为SpaceX新增数十亿美元债务，同时成功降低了利息成本
+
+来源：<code>www.blog.gnhku.cn/Article/6499430.shtml</code>
+
+### 高德推出“问店选址”智能助手，并接入钉钉悟空平台，利用AI技术辅助商家进行开店选址决策
+
+来源：<code>www.blog.gnhku.cn/Article/1923.shtml</code>
+
+### 2026年字节跳动奖学金计划现已开放，首次面向全球申请，获奖名额较往年有所增加
+
+来源：<code>www.blog.zlwmu.cn/Article/497040.shtml</code>
+
+### 豆包专业版办公五大新功能实测：3分钟完成327张图归档，PPT配图偶有缺失，图表识别仍需人工辅助
+
+来源：<code>www.blog.gnhku.cn/Article/96386.shtml</code>
+
+### 李斌表示蔚来ES9空间表现超越多数主流MPV，呼吁用户“忘掉MPV
+
+来源：<code>www.blog.ipiye.cn/Article/18400.shtml</code>
+
+### 深圳依托华为昇腾910C芯片成功完成万亿级AI模型训练，已达工业级稳定运行标准
+
+来源：<code>www.blog.ipiye.cn/Article/95723.shtml</code>
+
+### AI版支付宝正式命名为“阿宝”并上线，已开启邀请制测试
+
+来源：<code>www.blog.gnhku.cn/Article/198895.shtml</code>
+
+### 鸿蒙智行新款问界M9预订量累计突破7万台，预售价49.98万元起
+
+来源：<code>www.blog.gnhku.cn/Article/779174.shtml</code>
+
+## 三、科技产业
+
+### 去掉红标后依旧犀利：徕卡SL3-P马球赛场实拍体验
+
+来源：<code>www.blog.baoyd.cn/Article/46706.shtml</code>
+
+### 国内最大智驾方案商Momenta赴港IPO获证监会备案通过
+
+来源：<code>www.blog.zlwmu.cn/Article/5755184.shtml</code>
+
+### 软银孙正义反驳AI泡沫论，称该说法是对AI的侮辱，行业仍处早期阶段
+
+来源：<code>www.blog.gnhku.cn/Article/048476.shtml</code>
+
+### AI热潮推动科技巨头海外发债，全球公司债市场格局正在重塑
+
+来源：<code>www.blog.gnhku.cn/Article/7034.shtml</code>
+
+### 美国允许可信合作伙伴使用Anthropic的Mythos 5 AI模型
+
+来源：<code>www.blog.zlwmu.cn/Article/4059896.shtml</code>
+
+### 谷歌YouTube因被指控成瘾设计损害未成年人心理健康，庭前达成和解
+
+来源：<code>www.blog.ipiye.cn/Article/916273.shtml</code>
+
+### 特斯拉陶琳透露车窗内层玻璃厚度降至1.1毫米，雷军回应YU7和新SU7也将跟进
+
+来源：<code>www.blog.baoyd.cn/Article/0874.shtml</code>
+
+### 中金认为推理时代CPU产业地位正被重新评估
+
+来源：<code>www.blog.zlwmu.cn/Article/03563.shtml</code>
+
+### Luna相机延期至6月上市，刘靖康致歉称因临时新增需求
+
+来源：<code>www.blog.ipiye.cn/Article/9663929.shtml</code>
+
+### 独家：原华为盘古团队“90后少帅”离职创业，新公司已获亿元级估值融资
+
+来源：<code>www.blog.zlwmu.cn/Article/5089.shtml</code>
+
+### 据悉蚂蚁集团正秘密内测AI版支付宝
+
+来源：<code>www.blog.zlwmu.cn/Article/07130.shtml</code>
+
+### 苹果美国关闭三家Apple Store，部分门店员工遭“区别对待”引发争议
+
+来源：<code>www.blog.zlwmu.cn/Article/04020.shtml</code>
+
+### 千问推出世界杯赛果智能预测工具，首日两场比赛结果全部猜中
+
+来源：<code>www.blog.baoyd.cn/Article/9067401.shtml</code>
+
+### 小红书获得世界杯转播权益，知情人士透露报价理性未超出往届水平
+
+来源：<code>www.blog.gnhku.cn/Article/0775.shtml</code>
+
+### 毛一年称美团无人机商业配送订单已累计突破90万单
+
+来源：<code>www.blog.baoyd.cn/Article/741691.shtml</code>
+
+### 智界郭锐称V9车型Ultra高阶版用户占比超八成，首批交付标志着智界2.0阶段关键进展
+
+来源：<code>www.blog.baoyd.cn/Article/6221.shtml</code>
+
+### 5月电视出货量同比下滑显著，主要品牌合计降幅达到22.4%
+
+来源：<code>www.blog.zlwmu.cn/Article/9169378.shtml</code>
+
+### 华为朱懂东透露鸿蒙PC市场表现远超预期，MateBook Fold在2万元档大折叠轻薄本中占据七成份额
+
+来源：<code>www.blog.gnhku.cn/Article/1534.shtml</code>
+
+### Counterpoint预计2026年全球智能手机出货量将下滑13.9%，为2013年以来最低点
+
+来源：<code>www.blog.zlwmu.cn/Article/073478.shtml</code>
+
+### 华为Mate 90将首发搭载鸿蒙7正式版，性能提升幅度为15%
+
+来源：<code>www.blog.zlwmu.cn/Article/8224939.shtml</code>
+
+### 丰田4月全球销量为84.9万辆，其中在华市场同比下跌25.4%
+
+来源：<code>www.blog.zlwmu.cn/Article/1318750.shtml</code>
+
+### 全新问界M9配备全向立体融合感知系统，全车共40个传感器，余承东称华为目标是超越人眼能力
+
+来源：<code>www.blog.baoyd.cn/Article/59540.shtml</code>
+
+### 华为今日开售钛丝半框方形AI眼镜，钛银灰配色版本定价为2499元
+
+来源：<code>www.blog.zlwmu.cn/Article/3318.shtml</code>
+
+### IBM印度负责人帕特尔表示，年轻人口结构使印度在全球AI竞争中具备优势
+
+来源：<code>www.blog.baoyd.cn/Article/100804.shtml</code>
+
+### 联想第四季度财报业绩创历史新高，AI相关业务收入占比接近40%
+
+来源：<code>www.blog.zlwmu.cn/Article/2144840.shtml</code>
+
+### 理想汽车进一步细化具身智能汽车定义，李想预测Livis今年在安全与效率上或超过人类水平
+
+来源：<code>www.blog.zlwmu.cn/Article/138965.shtml</code>
+
+### 华为nova 16 Pro首度搭载2亿像素红枫影像系统，为行业首款此类配置
+
+来源：<code>www.blog.baoyd.cn/Article/679367.shtml</code>
+
+### 戴尔Pro 3 Series 16海外售价为11540元，主攻入门级商用AI笔记本市场
+
+来源：<code>www.blog.baoyd.cn/Article/7940.shtml</code>
+
+### 华为昇腾910C完成1.6万亿参数DeepSeek全参数后训练，标志着国产算力取得重要进展
+
+来源：<code>www.blog.gnhku.cn/Article/733960.shtml</code>
+
+### 据传字节跳动正与天数智芯洽谈AI芯片采购合作事宜
+
+来源：<code>www.blog.ipiye.cn/Article/0744057.shtml</code>
+
+### 傅盛指出，企业引入AI Agent当下尚属可选，但三年后将成为必要选择
+
+来源：<code>www.blog.zlwmu.cn/Article/4126.shtml</code>
+
+### Anthropic计划在数周内推出对标Mythos的大型新模型，规模发布在即
+
+来源：<code>www.blog.baoyd.cn/Article/8147463.shtml</code>
+
+### 因星舰V3助推器出现故障，FAA要求SpaceX展开调查并暂停后续试飞
+
+来源：<code>www.blog.gnhku.cn/Article/35364.shtml</code>
+
+### 今年618大促期间，AI虚拟主播大量进入直播间，电商带货格局更趋多元
+
+来源：<code>www.blog.zlwmu.cn/Article/46256.shtml</code>
+
+### 萤石推出开放平台2.0，并同步发布“萤石蓝海AIoT一站式工作台”等新品
+
+来源：<code>www.blog.baoyd.cn/Article/5039.shtml</code>
+
+### 智源研究院王仲远表示，AI正经历范式转移，其核心在于预测下一个“状态
+
+来源：<code>www.blog.ipiye.cn/Article/834500.shtml</code>
+
+### 华为龚体宣布，星闪协议栈将于7月15日全面对外开放源代码
+
+来源：<code>www.blog.gnhku.cn/Article/65930.shtml</code>
+
+### 日本完成5马赫超音速发动机地面试车，计划2040年启动商业载客飞行
+
+来源：<code>www.blog.ipiye.cn/Article/451903.shtml</code>
+
+### GPD推出MicroPC 2迷你笔记本，搭载N350芯片并升级至Twin Lake平台
+
+来源：<code>www.blog.gnhku.cn/Article/7681.shtml</code>
+
+### 三家厂商正在筹备7英寸屏新手机，巨屏细分市场的竞争日趋激烈
+
+来源：<code>www.blog.baoyd.cn/Article/1858.shtml</code>
+
+### 余承东透露，问界M9系列上市首小时大定突破1.1万台，开局即成爆款
+
+来源：<code>www.blog.zlwmu.cn/Article/648053.shtml</code>
+
+### 淘宝闪购称长期遭受同行不实传言困扰，警方已正式介入调查
+
+来源：<code>www.blog.baoyd.cn/Article/6332.shtml</code>
+
+### 华为钱包公布HDC 2026电子票务细则，要求设备升级至HarmonyOS 5或更高版本
+
+来源：<code>www.blog.baoyd.cn/Article/5371331.shtml</code>
+
+### 联想方案服务再度蝉联IDC中国IT服务市场年度冠军
+
+来源：<code>www.blog.ipiye.cn/Article/661273.shtml</code>
+
+## 四、国际热点
+
+### 黄仁勋透露，英伟达在中国市场的营收占比目前已降至9%
+
+来源：<code>www.blog.gnhku.cn/Article/977207.shtml</code>
+
+### 李东生呼吁坚持AI赋能实体经济，推动亚太产业链协同升级
+
+来源：<code>www.blog.gnhku.cn/Article/163679.shtml</code>
+
+### SAP大中华区总裁原欣认为，AI时代竞争壁垒并不取决于智能体数量
+
+来源：<code>www.blog.baoyd.cn/Article/7102452.shtml</code>
+
+### 蚂蚁电竞发布ANT273PQL PRO 27英寸显示器，具备2K 320Hz规格，机械臂底座需单独购买
+
+来源：<code>www.blog.zlwmu.cn/Article/75043.shtml</code>
+
+### 华为凌霄子母路由Q7电线版今起开售，搭载星闪电竞专链可为移动设备直连降低时延，起售价格1219元
+
+来源：<code>www.blog.ipiye.cn/Article/809405.shtml</code>
+
+### 华为召开鸿蒙办公新品技术沟通会，聚焦融合创新以助推产业升级进程
+
+来源：<code>www.blog.baoyd.cn/Article/3482196.shtml</code>
+
+### 华为麒麟芯片主频或将冲击近5GHz，性能有望实现接近翻倍提升
+
+来源：<code>www.blog.baoyd.cn/Article/3679.shtml</code>
+
+### 阿里官方澄清：关于周靖人离职的传闻并不属实
+
+来源：<code>www.blog.baoyd.cn/Article/950352.shtml</code>
+
+### 苹果WWDC 2026前瞻：库克将如何完成其任期内最后一次重磅亮相？
+
+来源：<code>www.blog.zlwmu.cn/Article/637932.shtml</code>
+
+### 小米17系列销量突破500万台，位居国产高端市场第二，仅落后于华为Mate 80
+
+来源：<code>www.blog.gnhku.cn/Article/2393.shtml</code>
+
+### 李维斯父亲节海报因“翘臀”设计引发争议，被指偏离父爱主题，官方已撤下该海报
+
+来源：<code>www.blog.ipiye.cn/Article/415399.shtml</code>
+
+### 长虹在三大城市启动足球专列活动，借助AI人感空调智能送风功能提升观赛体验
+
+来源：<code>www.blog.zlwmu.cn/Article/3590.shtml</code>
+
+### 消息称苹果硬件业务新负责人已启动第二轮架构调整，系其上任后的又一重要举措
+
+来源：<code>www.blog.zlwmu.cn/Article/118600.shtml</code>
+
+### 联想回应存储芯片涨价：凭借良好库存策略，目前供货保持充足
+
+来源：<code>www.blog.ipiye.cn/Article/42638.shtml</code>
+
+### 算电协同战略具备深远影响与重大战略意义
+
+来源：<code>www.blog.ipiye.cn/Article/4238926.shtml</code>
+
+### SpaceX设定新目标：未来五年内实现年发射任务达万次
+
+来源：<code>www.blog.zlwmu.cn/Article/68360.shtml</code>
+
+### 联想来酷斗战者战7000P游戏本搭载251HX+5060，国补后到手价7649.15元
+
+来源：<code>www.blog.ipiye.cn/Article/1977.shtml</code>
+
+### 赛力斯携手字节跳动联合打造赛豆汽车，首款车型已亮相并悬挂AIVA标识
+
+来源：<code>www.blog.zlwmu.cn/Article/3052394.shtml</code>
+
+### 网络餐饮新规生效首日，淘宝闪购即完成首批外卖商家标识标注工作
+
+来源：<code>www.blog.zlwmu.cn/Article/07377.shtml</code>
+
+### 光峰专显推出AIMapper软件，可简化3D Mapping流程并显著提升智能化效率
+
+来源：<code>www.blog.gnhku.cn/Article/5261.shtml</code>
+
+### 天涯社区回应访问异常：因流量激增导致卡顿，将尽快修复恢复服务
+
+来源：<code>www.blog.baoyd.cn/Article/658347.shtml</code>
+
+### 字节扣子Coze发布3.0版本，新增支持Claude Code、Codex CLI等工具
+
+来源：<code>www.blog.gnhku.cn/Article/54557.shtml</code>
+
+### SpaceX敲定IPO发行价每股135美元，马斯克持有表决权比例超过82%
+
+来源：<code>www.blog.ipiye.cn/Article/3302912.shtml</code>
+
+### 苹果携手用户走过十五年，库克执掌期间哪款产品最让你难忘？
+
+来源：<code>www.blog.baoyd.cn/Article/615218.shtml</code>
+
+### PingPong发布面向航空旅游行业的一体化支付方案
+
+来源：<code>www.blog.zlwmu.cn/Article/5784463.shtml</code>
+
+### 极氪5月交付量达34377辆，单车平均售价较去年同期增长52.4%
+
+来源：<code>www.blog.gnhku.cn/Article/1713585.shtml</code>
+
+### 中东资本大举认购SpaceX首次公开募股，投资额达数十亿美元量级
+
+来源：<code>www.blog.gnhku.cn/Article/503687.shtml</code>
+
+### 存储芯片价格持续走高，2026年全球智能机产出量预计下滑16.2%
+
+来源：<code>www.blog.baoyd.cn/Article/1886164.shtml</code>
+
+### 高继扬预估2030年后具身智能市场规模将超万亿，年增速可达10至100倍
+
+来源：<code>www.blog.gnhku.cn/Article/794716.shtml</code>
+
+### B站迎接17周年庆，陈睿表示社区生态始终是优质内容的最佳孵化器
+
+来源：<code>www.blog.gnhku.cn/Article/26287.shtml</code>
+
+### 奇瑞捷豹路虎公布FREELANDER神行者8首发限定版官图，新车计划下半年启动销售
+
+来源：<code>www.blog.baoyd.cn/Article/1141893.shtml</code>
+
+### KKR拟于米兰设立新办事处，以强化在意大利市场的战略部署
+
+来源：<code>www.blog.ipiye.cn/Article/3116.shtml</code>
+
+### 苹果计划为AirPods引入摄像头模块，打造无线耳机新标杆，产品预期明年推出
+
+来源：<code>www.blog.baoyd.cn/Article/1029159.shtml</code>
+
+### 鸿蒙智行尚界H5起售价15.98万元，首批试驾车已遍布全国逾110城
+
+来源：<code>www.blog.ipiye.cn/Article/1185724.shtml</code>
+
+### 美国电动车制造商Rivian推出R2纯电SUV，瞄准大众市场与智能驾驶赛道
+
+来源：<code>www.blog.baoyd.cn/Article/518567.shtml</code>
+
+### 零一汽车递表港交所，经销收入占比与同行有异，第三方回款存争议，无人重卡收入占比仅1.5%不足千万
+
+来源：<code>www.blog.zlwmu.cn/Article/780004.shtml</code>
+
+### 华硕廖逸翔称近半年部分PC在台售价涨30%，预估2026年Q3继续温和上扬
+
+来源：<code>www.blog.ipiye.cn/Article/704815.shtml</code>
+
+### 追觅高管就“长三角某市辖区统计与追觅合作”传闻回应，称旗下基金投资均合规
+
+来源：<code>www.blog.zlwmu.cn/Article/0723.shtml</code>
+
+### 波士顿动力Atlas人形机器人正训练踢球技术，目标未来登上世界杯赛场
+
+来源：<code>www.blog.zlwmu.cn/Article/2825172.shtml</code>
+
+### Omdia报告显示2026年Q1欧洲智能机均价达580欧元创历史新高，三星苹果小米出货居前三
+
+来源：<code>www.blog.gnhku.cn/Article/14621.shtml</code>
+
+### 白敬亭参与简醇品牌溯源活动时，君乐宝董事长魏立华透露双方合作关系将迈入新阶段。
+
+来源：<code>www.blog.ipiye.cn/Article/743674.shtml</code>
+
+### 世航智能创始人陈晓博指出，尽管中国为全球最大航运国，但50米以下海洋作业领域几乎处于空白状态。
+
+来源：<code>www.blog.ipiye.cn/Article/7281.shtml</code>
+
+### 滴滴对会员体系进行升级，其“快速应答”功能在一年内累计被使用近3000万次。
+
+来源：<code>www.blog.baoyd.cn/Article/0308.shtml</code>
+
+### 支付宝完成3亿笔AI支付交易，并同步亮相AI钱包与Token Pay两项新服务。
+
+来源：<code>www.blog.ipiye.cn/Article/4757.shtml</code>
+
+## 五、文体娱乐
+
+### 当Token逐渐进入零毛利时代，大模型行业未来发展路径引发思考。
+
+来源：<code>www.blog.gnhku.cn/Article/460327.shtml</code>
+
+### 华为云推出Agentic AI新品，具备10万卡集群能力，算力高达200EFLOPS。
+
+来源：<code>www.blog.baoyd.cn/Article/31944.shtml</code>
+
+### 超12万玩家联合请愿索尼推出《命运3》，但实际落地的可能性不大。
+
+来源：<code>www.blog.gnhku.cn/Article/764636.shtml</code>
+
+### 中国移动董事长陈忠岳认为，AI不应仅服务于少数精英，而应为运营商开辟新的增长机遇。
+
+来源：<code>www.blog.ipiye.cn/Article/5848335.shtml</code>
+
+### 针对“赛豆科技”供应商传闻，知情人士回应称智驾方案由元戎启行提供，智舱由弋途负责。
+
+来源：<code>www.blog.ipiye.cn/Article/292128.shtml</code>
+
+### RX 9060 XT超频跑出4643MHz，位居全球第二，AMD内部工具功不可没。
+
+来源：<code>www.blog.baoyd.cn/Article/322926.shtml</code>
+
+### 品质生活与智慧科技将怎样重塑未来日常场景。
+
+来源：<code>www.blog.gnhku.cn/Article/2475.shtml</code>
+
+### 崔泰源天价离婚案定于7月宣判，尽管SK海力士等股票大涨，集团控制权预计仍无忧。
+
+来源：<code>www.blog.ipiye.cn/Article/288458.shtml</code>
+
+### 微星618促销汇总：带屏360水冷仅719元，320Hz电竞屏低至1099元。
+
+来源：<code>www.blog.ipiye.cn/Article/116489.shtml</code>
+
+### 王传福透露，比亚迪芯片研发团队规模超7000人，累计投入已突破1000亿元。
+
+来源：<code>www.blog.baoyd.cn/Article/6630073.shtml</code>
+
+### Xiaomi 17 Max体验评测：经典大屏风格再度回归。
+
+来源：<code>www.blog.baoyd.cn/Article/3676.shtml</code>
+
+### 智元机器人宣布，未来五年将投入20亿元专项基金用于生态建设。
+
+来源：<code>www.blog.baoyd.cn/Article/65205.shtml</code>
+
+### 苹果回应“套壳Gemini”质疑，强调iOS 27版Siri的AI能力由自研AFM模型驱动。
+
+来源：<code>www.blog.ipiye.cn/Article/70188.shtml</code>
+
+### 北京链家启动“小区开放日”试点活动。
+
+来源：<code>www.blog.gnhku.cn/Article/44388.shtml</code>
+
+### 小鹏刘先明认为特斯拉FSD进入中国市场是利好，小鹏在本地化场景、数据积累和算力方面更具竞争力。
+
+来源：<code>www.blog.zlwmu.cn/Article/62807.shtml</code>
+
+### Marvell总裁Chris Koopmans表示，正在与台积电就导入A14制程进行商讨。
+
+来源：<code>www.blog.baoyd.cn/Article/0312.shtml</code>
+
+### 华为申请注册“世界”商标归类于汽车领域，此前已获得“仙界”“天界”等相关名称。
+
+来源：<code>www.blog.zlwmu.cn/Article/5073309.shtml</code>
+
+### 据称小红书已委任高盛和中金负责其香港IPO事宜，最快可能在今年下半年启动。
+
+来源：<code>www.blog.baoyd.cn/Article/0596.shtml</code>
+
+### vivo S60系列正式发布，由田曦薇代言，核心卖点为4K Live原相机拍摄功能。
+
+来源：<code>www.blog.gnhku.cn/Article/4881300.shtml</code>
+
+### 特朗普媒体科技称，目前不会推进Truth Social等资产的分拆计划。
+
+来源：<code>www.blog.gnhku.cn/Article/8839847.shtml</code>
+
+### 东风猛士M817 Ultimate中文命名定为“大师版”，率先搭载华为乾崑智驾NCA越野版，超千匹马力为同级别独有。
+
+来源：<code>www.blog.ipiye.cn/Article/08747.shtml</code>
+
+### 美国商务部修补出口管制漏洞，禁止先进芯片流向中企海外子公司，英伟达已就此作出回应。
+
+来源：<code>www.blog.baoyd.cn/Article/2092.shtml</code>
+
+### 中国酒业协会宣布免去五粮液董事长曾从钦的职务。
+
+来源：<code>www.blog.zlwmu.cn/Article/00050.shtml</code>
+
+### 魔法原子与京东达成合作，并设下年销售额达10亿元的目标。
+
+来源：<code>www.blog.ipiye.cn/Article/88546.shtml</code>
+
+### 雷军表示公司市值未突破万亿属严重低估，下午小米机器人将亮相并带来惊喜。
+
+来源：<code>www.blog.baoyd.cn/Article/6579582.shtml</code>
+
+### 华为nova 16系列包含Pro和Ultra两个版本，首销搭载麒麟9010S，起售价为2999元。
+
+来源：<code>www.blog.gnhku.cn/Article/46884.shtml</code>
+
+### 特斯拉本土化语音交互升级已进入落地阶段，车机将通过OTA接入豆包大模型。
+
+来源：<code>www.blog.ipiye.cn/Article/7160.shtml</code>
+
+### 美国众议院议员提出议案，计划对电动汽车每年征收130美元用于道路养护。
+
+来源：<code>www.blog.ipiye.cn/Article/9505291.shtml</code>
+
+### 外界批评苹果创新不足，新任CEO能否改变这一局面？
+
+来源：<code>www.blog.zlwmu.cn/Article/261411.shtml</code>
+
+### 理想新款MEGA Home纯电MPV申报图曝光，内饰有所调整，并新增四颗激光雷达。
+
+来源：<code>www.blog.zlwmu.cn/Article/6214090.shtml</code>
+
+### 华为对美国制裁表示感谢，称其推动了中国半导体产业链的发展。
+
+来源：<code>www.blog.ipiye.cn/Article/6049568.shtml</code>
+
+### SpaceX上市首日股价大涨19%，市值升至全球第七位。
+
+来源：<code>www.blog.baoyd.cn/Article/063273.shtml</code>
+
+### 国家大基金据传将领投DeepSeek首轮融资，其投前估值约为450亿美元。
+
+来源：<code>www.blog.baoyd.cn/Article/54842.shtml</code>
+
+### 微软推Win“梦幻机型”／腾讯云DeepSeek-V4降价幅度最高达97.5%／中国资本或收购徕卡相机，今晨资讯一览。
+
+来源：<code>www.blog.zlwmu.cn/Article/9241.shtml</code>
+
+### 天猫超市正式进军香港市场。
+
+来源：<code>www.blog.ipiye.cn/Article/02042.shtml</code>
+
+### 华为对星河AI网络进行升级，宣称可让Token生产效率提升2到5倍。
+
+来源：<code>www.blog.zlwmu.cn/Article/4242958.shtml</code>
+
+### 泡泡玛特自主研发的首款游戏《梦想家园》宣布停止服务。
+
+来源：<code>www.blog.gnhku.cn/Article/6345.shtml</code>
+
+### 法拉利CEO维尼亚为电动车型Luce的高定价辩护，称创新值得额外付出。
+
+来源：<code>www.blog.ipiye.cn/Article/0464.shtml</code>
+
+### 享界新车型加速推进量产，北汽张建勇表示享界已上升为集团战略重心。
+
+来源：<code>www.blog.zlwmu.cn/Article/63807.shtml</code>
+
+### 李想认为，当前手机和汽车仍停留在功能层面，尚未成为真正的智能生命体。
+
+来源：<code>www.blog.zlwmu.cn/Article/9760.shtml</code>
+
+### 效仿苹果路线，Windows笔记本重回8GB内存起跳，实际性能是否够用引发讨论。
+
+来源：<code>www.blog.gnhku.cn/Article/0318.shtml</code>
+
+### 软银市值超过丰田，跃居日本上市公司市值榜首。
+
+来源：<code>www.blog.gnhku.cn/Article/5158649.shtml</code>
+
+### 云知声发布U2原生Agent大模型，选择避开参数竞赛的传统路径。
+
+来源：<code>www.blog.gnhku.cn/Article/5220918.shtml</code>
+
+### 高德CEO郭宁透露，2025年新增用户超300万，新加坡成为其首个海外扫街榜城市。
+
+来源：<code>www.blog.ipiye.cn/Article/8587850.shtml</code>
+
+## **AI Builders Digest** | 每日06:00自动播报 | 数据来源：新浪财经、公开媒体报道
+
+*报告生成时间：2026年07月07日15时10分48秒*
+
+*数据来源：新浪财经、公开媒体报道*
