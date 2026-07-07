@@ -1,400 +1,901 @@
-# LinkVault Core
+# AI Builders Digest 今日热点快报
 
-LinkVault Core 是一个面向开发者与技术研究者的结构化外链资源聚合平台。本项目不生产原创内容，而是通过人工筛选与自动化校验相结合的方式，将散落于技术博客、文档站与社区讨论中的高质量外部链接进行归类、索引与可用性维持。项目定位为“技术外链的稳定中转站”，解决个人书签难以维护、官方文档变动后旧链接失效、以及技术社区优质讨论被淹没的问题。目标用户包括运维工程师、全栈开发者、技术调研人员以及开源贡献者。
+*报告生成时间：2026年07月07日15时10分43秒*
 
-## 功能概览
+---
 
-**批量链接状态巡检**：每日定时对入库 URL 进行 HTTP 状态码检测，自动标记 4xx/5xx 异常，并生成可视化健康报表。
+## 一、国内时政
 
-**分类树状导航**：依据链接来源域名、路径结构及内容特征，将资源自动归入开发工具、故障排查、架构设计等二级分类，支持自定义标签覆盖。
+### 光大证券维持美图“买入”评级，影像节推出8款AI新品。
 
-**全文元数据检索**：提取每个目标页面的标题、描述与关键词，建立轻量级倒排索引，支持布尔运算符与通配符查询。
+来源：<code>www.blog.zlwmu.cn/Article/942052.shtml</code>
 
-**外链变更追踪**：记录每个 URL 的响应时间、内容长度与最后修改头信息，在目标页面发生重大变更时向订阅者发送告警。
+### SpaceX上市首周收官，股价较IPO发行价上涨37%。
 
-**导入导出兼容**：支持导入浏览器书签 HTML、Markdown 列表及纯文本 URL 清单；导出格式包括 JSON、CSV 与结构化 Markdown。
+来源：<code>www.blog.baoyd.cn/Article/6379557.shtml</code>
 
-**权限分级管理**：提供管理员、编辑者、访客三级角色控制，编辑者可新增或修正链接元数据，访客仅拥有只读查询权限。
+### 菜粕行情是否已触及底部？0624热点跟踪研判本轮走势持续性。
 
-**RESTful API 服务**：基于 OpenAPI 3.0 规范暴露所有核心功能，便于与其他内部系统或自动化脚本集成。
+来源：<code>www.blog.ipiye.cn/Article/342002.shtml</code>
 
-## 应用场景
+### 特朗普为伊朗协议定下基调，意在反驳关于美国失利的说法。
 
-**技术团队内部知识库外链治理**：当团队积累了大量分散在 Wiki、文档和聊天记录中的参考链接时，可使用 LinkVault Core 统一纳管。运维人员定期运行健康巡检，批量发现并替换已失效的依赖下载地址或过时的配置文档引用。
+来源：<code>www.blog.zlwmu.cn/Article/2853657.shtml</code>
 
-**开源项目 README 与文档的外链辅助维护**：开源项目维护者可将项目文档中的所有外部引用（如依赖库主页、协议说明、参考论文）导入 LinkVault Core。当上游资源变动时，系统自动提示，避免项目文档中出现死链，提升用户信任度。
+### 盖蒂图片社携手OpenAI达成合作，股价应声显著拉升。
 
-**技术调研阶段的素材收集与验证**：架构师或预研工程师在进行技术选型时，需要同时查阅数十个相关项目的官网、性能测试报告与社区讨论。通过本项目的批量导入功能，可快速建立调研素材池，并利用元数据检索进行交叉比对。
+来源：<code>www.blog.baoyd.cn/Article/9003400.shtml</code>
 
-**自动化 CI/CD 流水线中的链接检查环节**：将 LinkVault Core 作为命令行工具集成至持续集成流程，在网站或文档应用构建前自动扫描所有静态页面中的外部链接，确保发布内容不包含损坏的引用，降低用户投诉率。
+### 实控人涉操纵市场获取保候审，博瑞医药业绩趋缓及港股上市进程引发关注。
 
-## 快速开始
+来源：<code>www.blog.zlwmu.cn/Article/1385.shtml</code>
 
-以下指令适用于 Linux/macOS 环境，Windows 用户可通过 WSL2 或 Git Bash 执行。
+### 连小敏同志不幸离世。
 
-```bash
-# 克隆项目仓库至本地
-git clone https://github.com/linkvault/core.git linkvault-core
-cd linkvault-core
+来源：<code>www.blog.ipiye.cn/Article/5844.shtml</code>
 
-# 安装项目依赖（使用 pip 与虚拟环境）
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+### 腾讯小范围测试TenPay Go，便利境外人士在华移动支付。
 
-# 初始化本地数据库并启动开发服务
-python manage.py migrate
-python manage.py runserver --host 0.0.0.0 --port 8080
-```
+来源：<code>www.blog.ipiye.cn/Article/81658.shtml</code>
 
-完成上述步骤后，访问 http://localhost:8080 即可进入 Web 管理界面。首次启动将自动创建管理员账户，默认用户名与密码请查阅项目内部文档的初始化章节。
+### 宁德时代幕后“江苏股神”再度出手，联手开矿能否落地？
 
-## 安装要求
+来源：<code>www.blog.gnhku.cn/Article/8518.shtml</code>
 
-| 依赖组件 | 必需版本 | 说明 |
-|---|---|---|
-| Python | 3.9 / 3.10 / 3.11 | 核心运行环境，低于 3.9 版本将导致异步语法错误 |
-| PostgreSQL | 13.x 或更高 | 主数据库引擎，用于存储链接元数据与巡检历史 |
-| Redis | 6.2.x 或更高 | 缓存与任务队列后端，支撑定时任务与高频查询 |
-| Node.js | 18.x LTS | 仅用于前端静态资源构建，生产环境可选用预构建包 |
-| Nginx | 1.22.x 或更高 | 推荐生产环境反向代理服务器，处理 TLS 终结与静态文件缓存 |
-| 系统内存 | 至少 2 GB 可用 | 不含数据库与缓存进程的独立占用，推荐 4 GB |
-| 磁盘空间 | 至少 10 GB | 用于存储 SQLite 迁移文件、日志及临时缓存（若使用 SQLite 开发） |
+### 欧洲军工股受军费扩张预期提振，重回上升通道。
 
-## 文档导航
+来源：<code>www.blog.baoyd.cn/Article/4083.shtml</code>
 
-| 层面 | 目录 | 回答的问题 |
-|---|---|---|
-| 用户手册 | /docs/user-guide/quick-start.md | 如何快速启动服务、导入第一批链接、查看巡检结果 |
-| 运维指南 | /docs/ops/deployment-options.md | 如何配置 HTTPS、调整巡检频率、备份数据库 |
-| API 参考 | /docs/api/endpoints.md | 所有 REST 接口的请求参数、响应格式与错误码定义 |
-| 开发设计 | /docs/developer/architecture.md | 项目模块划分、数据流走向、扩展点与钩子函数说明 |
-| 故障排查 | /docs/troubleshooting/common-errors.md | 数据库连接超时、巡检任务堆积、内存溢出等问题的处理步骤 |
+### 元道通信与智云股份股民索赔案再获法院立案，索赔工作持续推进。
 
-## 资源列表
+来源：<code>www.blog.zlwmu.cn/Article/6638526.shtml</code>
 
-### 技术博文与案例文章
+### 韩国拟下调燃油价格上限标准，以顺应国际油价走低态势。
 
-http://www.blog.fuvxie.cn/Article/details/3078315.sHtML  
-http://www.blog.fuvxie.cn/Article/details/994841.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2282461.sHtML  
-http://www.blog.fuvxie.cn/Article/details/034860.sHtML  
-http://www.blog.fuvxie.cn/Article/details/626205.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7679117.sHtML  
-http://www.blog.fuvxie.cn/Article/details/44000.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6981404.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7468993.sHtML  
-http://www.blog.fuvxie.cn/Article/details/92055.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2444537.sHtML  
-http://www.blog.fuvxie.cn/Article/details/983308.sHtML  
-http://www.blog.fuvxie.cn/Article/details/386144.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4939937.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5388.sHtML  
-http://www.blog.fuvxie.cn/Article/details/59904.sHtML  
-http://www.blog.fuvxie.cn/Article/details/231504.sHtML  
-http://www.blog.fuvxie.cn/Article/details/758099.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4366335.sHtML  
-http://www.blog.fuvxie.cn/Article/details/327167.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6275429.sHtML  
-http://www.blog.fuvxie.cn/Article/details/87923.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0764.sHtML  
-http://www.blog.fuvxie.cn/Article/details/383062.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1415308.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6115.sHtML  
-http://www.blog.fuvxie.cn/Article/details/29603.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1541.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4679082.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6375151.sHtML  
-http://www.blog.fuvxie.cn/Article/details/71558.sHtML  
-http://www.blog.fuvxie.cn/Article/details/881984.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4361115.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1445434.sHtML  
-http://www.blog.fuvxie.cn/Article/details/48734.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1262.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7196194.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4093831.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4093.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0897698.sHtML  
-http://www.blog.fuvxie.cn/Article/details/91546.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9014.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4621.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6635752.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9554.sHtML  
-http://www.blog.fuvxie.cn/Article/details/55346.sHtML  
-http://www.blog.fuvxie.cn/Article/details/576250.sHtML  
-http://www.blog.fuvxie.cn/Article/details/375432.sHtML  
-http://www.blog.fuvxie.cn/Article/details/318716.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9288853.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3394.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3667463.sHtML  
-http://www.blog.fuvxie.cn/Article/details/114639.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6725.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3373854.sHtML  
-http://www.blog.fuvxie.cn/Article/details/010077.sHtML  
-http://www.blog.fuvxie.cn/Article/details/52958.sHtML  
-http://www.blog.fuvxie.cn/Article/details/61748.sHtML  
-http://www.blog.fuvxie.cn/Article/details/884493.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4473.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9955075.sHtML  
-http://www.blog.fuvxie.cn/Article/details/24454.sHtML  
-http://www.blog.fuvxie.cn/Article/details/388002.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9875.sHtML  
-http://www.blog.fuvxie.cn/Article/details/136927.sHtML  
-http://www.blog.fuvxie.cn/Article/details/41930.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3522745.sHtML  
-http://www.blog.fuvxie.cn/Article/details/56799.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1267.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3774.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6109405.sHtML  
-http://www.blog.fuvxie.cn/Article/details/994493.sHtML  
-http://www.blog.fuvxie.cn/Article/details/205764.sHtML  
-http://www.blog.fuvxie.cn/Article/details/292187.sHtML  
-http://www.blog.fuvxie.cn/Article/details/32975.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3467666.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3081954.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5142.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4488260.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2019793.sHtML  
-http://www.blog.fuvxie.cn/Article/details/68961.sHtML  
-http://www.blog.fuvxie.cn/Article/details/04641.sHtML  
-http://www.blog.fuvxie.cn/Article/details/763709.sHtML  
-http://www.blog.fuvxie.cn/Article/details/8569.sHtML  
-http://www.blog.fuvxie.cn/Article/details/64396.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3039336.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6796829.sHtML  
-http://www.blog.fuvxie.cn/Article/details/97323.sHtML  
-http://www.blog.fuvxie.cn/Article/details/86964.sHtML  
-http://www.blog.fuvxie.cn/Article/details/735328.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7419653.sHtML  
-http://www.blog.fuvxie.cn/Article/details/719156.sHtML  
-http://www.blog.fuvxie.cn/Article/details/07015.sHtML  
-http://www.blog.fuvxie.cn/Article/details/97414.sHtML  
-http://www.blog.fuvxie.cn/Article/details/87530.sHtML  
-http://www.blog.fuvxie.cn/Article/details/524184.sHtML  
-http://www.blog.fuvxie.cn/Article/details/75309.sHtML  
-http://www.blog.fuvxie.cn/Article/details/979124.sHtML  
-http://www.blog.fuvxie.cn/Article/details/71685.sHtML  
-http://www.blog.fuvxie.cn/Article/details/857786.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6919.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4525.sHtML  
-http://www.blog.fuvxie.cn/Article/details/30710.sHtML  
-http://www.blog.fuvxie.cn/Article/details/174731.sHtML  
-http://www.blog.fuvxie.cn/Article/details/37294.sHtML  
-http://www.blog.fuvxie.cn/Article/details/685788.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7162421.sHtML  
-http://www.blog.fuvxie.cn/Article/details/263898.sHtML  
-http://www.blog.fuvxie.cn/Article/details/99396.sHtML  
-http://www.blog.fuvxie.cn/Article/details/328979.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4618.sHtML  
-http://www.blog.fuvxie.cn/Article/details/332703.sHtML  
-http://www.blog.fuvxie.cn/Article/details/894182.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5417910.sHtML  
-http://www.blog.fuvxie.cn/Article/details/92626.sHtML  
-http://www.blog.fuvxie.cn/Article/details/766837.sHtML  
-http://www.blog.fuvxie.cn/Article/details/778219.sHtML  
-http://www.blog.fuvxie.cn/Article/details/69435.sHtML  
-http://www.blog.fuvxie.cn/Article/details/94587.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2216.sHtML  
-http://www.blog.fuvxie.cn/Article/details/353109.sHtML  
-http://www.blog.fuvxie.cn/Article/details/54268.sHtML  
-http://www.blog.fuvxie.cn/Article/details/011553.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3089380.sHtML  
-http://www.blog.fuvxie.cn/Article/details/63641.sHtML  
-http://www.blog.fuvxie.cn/Article/details/27058.sHtML  
-http://www.blog.fuvxie.cn/Article/details/256239.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9876926.sHtML  
-http://www.blog.fuvxie.cn/Article/details/341965.sHtML  
-http://www.blog.fuvxie.cn/Article/details/101029.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1161766.sHtML  
-http://www.blog.fuvxie.cn/Article/details/15870.sHtML  
-http://www.blog.fuvxie.cn/Article/details/529554.sHtML  
-http://www.blog.fuvxie.cn/Article/details/95737.sHtML  
-http://www.blog.fuvxie.cn/Article/details/703940.sHtML  
-http://www.blog.fuvxie.cn/Article/details/28098.sHtML  
-http://www.blog.fuvxie.cn/Article/details/567261.sHtML  
-http://www.blog.fuvxie.cn/Article/details/31916.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9694.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6252278.sHtML  
-http://www.blog.fuvxie.cn/Article/details/312961.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2263370.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6784.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3857400.sHtML  
-http://www.blog.fuvxie.cn/Article/details/03693.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6717.sHtML  
-http://www.blog.fuvxie.cn/Article/details/032241.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0818429.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4058054.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3491032.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5719718.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0036368.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0420998.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3658.sHtML  
-http://www.blog.fuvxie.cn/Article/details/21435.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9872055.sHtML  
-http://www.blog.fuvxie.cn/Article/details/47372.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0721.sHtML  
-http://www.blog.fuvxie.cn/Article/details/98661.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5832.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1530.sHtML  
-http://www.blog.fuvxie.cn/Article/details/90941.sHtML  
-http://www.blog.fuvxie.cn/Article/details/036240.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5077.sHtML  
-http://www.blog.fuvxie.cn/Article/details/8414108.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4345.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0017.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7122.sHtML  
-http://www.blog.fuvxie.cn/Article/details/263368.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5147.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9340.sHtML  
-http://www.blog.fuvxie.cn/Article/details/818335.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9344900.sHtML  
-http://www.blog.fuvxie.cn/Article/details/399561.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7784468.sHtML  
-http://www.blog.fuvxie.cn/Article/details/850293.sHtML  
-http://www.blog.fuvxie.cn/Article/details/718022.sHtML  
-http://www.blog.fuvxie.cn/Article/details/139435.sHtML  
-http://www.blog.fuvxie.cn/Article/details/04714.sHtML  
-http://www.blog.fuvxie.cn/Article/details/39562.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1549.sHtML  
-http://www.blog.fuvxie.cn/Article/details/64408.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1446533.sHtML  
-http://www.blog.fuvxie.cn/Article/details/172149.sHtML  
-http://www.blog.fuvxie.cn/Article/details/14076.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7559.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3806479.sHtML  
-http://www.blog.fuvxie.cn/Article/details/617681.sHtML  
-http://www.blog.fuvxie.cn/Article/details/18153.sHtML  
-http://www.blog.fuvxie.cn/Article/details/8317.sHtML  
-http://www.blog.fuvxie.cn/Article/details/920059.sHtML  
-http://www.blog.fuvxie.cn/Article/details/71062.sHtML  
-http://www.blog.fuvxie.cn/Article/details/682621.sHtML  
-http://www.blog.fuvxie.cn/Article/details/20014.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5236.sHtML  
-http://www.blog.fuvxie.cn/Article/details/0054.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9069916.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7097140.sHtML  
-http://www.blog.fuvxie.cn/Article/details/295601.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1497.sHtML  
-http://www.blog.fuvxie.cn/Article/details/14130.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1549182.sHtML  
-http://www.blog.fuvxie.cn/Article/details/94126.sHtML  
-http://www.blog.fuvxie.cn/Article/details/63957.sHtML  
-http://www.blog.fuvxie.cn/Article/details/46578.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3040.sHtML  
-http://www.blog.fuvxie.cn/Article/details/84523.sHtML  
-http://www.blog.fuvxie.cn/Article/details/04170.sHtML  
-http://www.blog.fuvxie.cn/Article/details/108542.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5168751.sHtML  
-http://www.blog.fuvxie.cn/Article/details/438533.sHtML  
-http://www.blog.fuvxie.cn/Article/details/21881.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4394519.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9695661.sHtML  
-http://www.blog.fuvxie.cn/Article/details/962865.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3467.sHtML  
-http://www.blog.fuvxie.cn/Article/details/3417.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6829160.sHtML  
-http://www.blog.fuvxie.cn/Article/details/73540.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6079.sHtML  
-http://www.blog.fuvxie.cn/Article/details/20142.sHtML  
-http://www.blog.fuvxie.cn/Article/details/04961.sHtML  
-http://www.blog.fuvxie.cn/Article/details/418862.sHtML  
-http://www.blog.fuvxie.cn/Article/details/82246.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1676595.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1883.sHtML  
-http://www.blog.fuvxie.cn/Article/details/2700515.sHtML  
-http://www.blog.fuvxie.cn/Article/details/12639.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7586196.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4238835.sHtML  
-http://www.blog.fuvxie.cn/Article/details/70862.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7228163.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7332762.sHtML  
-http://www.blog.fuvxie.cn/Article/details/7372.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9596.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6617.sHtML  
-http://www.blog.fuvxie.cn/Article/details/390655.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9850815.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9158.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5202787.sHtML  
-http://www.blog.fuvxie.cn/Article/details/777895.sHtML  
-http://www.blog.fuvxie.cn/Article/details/495090.sHtML  
-http://www.blog.fuvxie.cn/Article/details/1522014.sHtML  
-http://www.blog.fuvxie.cn/Article/details/241727.sHtML  
-http://www.blog.fuvxie.cn/Article/details/8730.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5761.sHtML  
-http://www.blog.fuvxie.cn/Article/details/4805017.sHtML  
-http://www.blog.fuvxie.cn/Article/details/9806334.sHtML  
-http://www.blog.fuvxie.cn/Article/details/6474.sHtML  
-http://www.blog.fuvxie.cn/Article/details/5623240.sHtML
+来源：<code>www.blog.baoyd.cn/Article/660606.shtml</code>
 
-## 项目结构
+### 深交所就2025年三季报披露不准确，对中交发展及时任董事长予以通报批评。
 
-```
-linkvault-core/
-├── cmd/                                # 命令行入口与守护进程
-│   ├── server/                         # Web 服务启动入口 (main.go)
-│   └── worker/                         # 巡检任务工作进程 (独立调度)
-├── internal/                           # 内部私有包，不对外暴露
-│   ├── checker/                        # HTTP 状态码与响应头检测逻辑
-│   │   ├── runner.go                   # 并发巡检控制器
-│   │   └── policies.go                 # 重试策略与超时配置
-│   ├── index/                          # 倒排索引构建与检索模块
-│   │   ├── builder.go                  # 从元数据生成索引
-│   │   └── querier.go                  # 布尔查询解析器
-│   ├── storage/                        # 数据库抽象层与迁移
-│   │   ├── postgres.go                 # PostgreSQL 驱动适配
-│   │   └── migrations/                 # 版本化 SQL 迁移文件
-│   └── api/                            # RESTful 路由与中间件
-│       ├── handlers/                   # 资源端点逻辑
-│       └── middleware/                 # 认证、日志、限流
-├── pkg/                                # 可被外部项目引用的公共库
-│   ├── models/                         # 数据实体定义 (Link, CheckRecord)
-│   └── utils/                          # 字符串处理、时间工具、URL 规范化
-├── web/                                # 前端管理界面源码
-│   ├── static/                         # 编译后的 CSS/JS 资源
-│   └── templates/                      # 服务端渲染模板 (Go html/template)
-├── configs/                            # 环境配置文件样例
-│   ├── development.yaml                # 开发环境参数
-│   └── production.yaml                 # 生产环境参数 (含密钥占位)
-├── scripts/                            # 辅助运维脚本
-│   ├── backup_db.sh                    # 数据库备份脚本
-│   └── import_bookmarks.py             # 浏览器书签导入工具
-├── docs/                               # 完整项目文档 (Markdown)
-│   ├── user-guide/                     # 用户操作手册
-│   └── developer/                      # 开发者设计文档
-├── test/                               # 单元测试与集成测试
-│   ├── integration/                    # 端到端 API 测试
-│   └── mock/                           # 模拟外部 HTTP 服务
-├── go.mod                              # Go 模块依赖定义
-├── go.sum                              # 依赖哈希校验
-├── Makefile                            # 构建、测试、打包命令聚合
-└── README.md                           # 项目首页说明 (本文件)
-```
+来源：<code>www.blog.zlwmu.cn/Article/172819.shtml</code>
 
-## 贡献指南
+### 溜溜梅盘中一度飙升超19%创历史新高，较发行价累计涨幅逾270%。
 
-1. 查阅问题追踪列表：访问 GitHub Issues 页面，查找标记为 `good-first-issue` 或 `help-wanted` 的工单，避免与其他贡献者重复工作。在确认接手前，在工单下回复 `/assign` 以锁定任务。
+来源：<code>www.blog.baoyd.cn/Article/07769.shtml</code>
 
-2. 派生项目并创建功能分支：将主仓库 Fork 至个人账户，然后克隆派生仓库。创建分支时遵循 `feature/` 或 `fix/` 前缀规范，例如 `feature/add-telegram-notify`。分支名称应简短描述变更内容。
+### 贵金属遭遇“黑色星期三”：黄金跌破4000美元，白银重挫6%，空头强势反扑。
 
-3. 编写代码与单元测试：所有新增逻辑必须包含对应的单元测试文件，覆盖正常路径与异常边界。测试文件命名遵循 `*_test.go` 规范。运行 `make test` 确保全部测试通过且覆盖率不低于百分之八十。
+来源：<code>www.blog.ipiye.cn/Article/85315.shtml</code>
 
-4. 更新文档与示例：若变更涉及用户可见功能，需同步更新 `/docs` 下的手册，并在 `configs/` 中提供新的配置示例。对外 API 变更必须更新 OpenAPI 描述文件。
+### 顶尖人才外流加剧AI行业忧虑，Alphabet股价创近一年最大单日跌幅。
 
-5. 发起拉取请求：推送分支至派生仓库后，向主仓库的 `main` 分支发起 Pull Request。描述中需引用关联的 Issue 编号，并附上测试结果截图或日志片段。等待至少一位维护者审核，根据反馈进行修改。
+来源：<code>www.blog.baoyd.cn/Article/6660807.shtml</code>
 
-## 常见问题
+### 受特朗普言论扰动，伊朗与美国后续谈判前景更添变数。
 
-**Q：巡检任务是否会对我所引用的第三方网站造成压力？**  
-A：系统默认采用指数退避策略，单目标 URL 的巡检间隔不小于 6 小时，且并发请求数限制为 5 个。所有请求均携带 `User-Agent: LinkVault-Core-HealthCheck` 标识，并遵循目标网站的 `robots.txt` 白名单规则。若需调整频率，可在 `configs/production.yaml` 中修改 `checker.interval` 与 `checker.concurrency` 参数。
+来源：<code>www.blog.gnhku.cn/Article/4198.shtml</code>
 
-**Q：导入大量 URL 后，系统响应变慢如何优化？**  
-A：首先确认 PostgreSQL 的 `shared_buffers` 与 `work_mem` 参数是否根据服务器内存进行了调优。其次，系统内置了基于 Redis 的查询缓存，默认缓存时间为 300 秒。若写入操作频繁，可考虑将巡检历史表按月进行分区。项目文档的运维章节提供了详细的性能调优检查清单。
+### 中远海能上午涨超8%，摩根大通维持“增持”评级。
 
-**Q：能否将 LinkVault Core 作为纯命令行工具使用，不启动 Web 服务？**  
-A：可以。执行 `./linkvault-cli check --file urls.txt` 可直接对文本文件中的 URL 列表执行单次巡检并将结果输出至标准输出，无需启动后台进程。该模式不依赖 PostgreSQL 与 Redis，仅需本地 SQLite 作为临时缓存。详细参数请参考 `./linkvault-cli --help`。
+来源：<code>www.blog.gnhku.cn/Article/3810164.shtml</code>
 
-## 许可证
+### 油价深跌或影响利率预期，美债收益率昨夜明显走低。
 
-MIT
+来源：<code>www.blog.ipiye.cn/Article/5771229.shtml</code>
 
-> 外链数量: 250 | 生成时间: 2026-07-05 16:26:27
+### 伊朗宣布未来60天霍尔木兹海峡对商船免收通行费。
+
+来源：<code>www.blog.zlwmu.cn/Article/1782.shtml</code>
+
+### 以色列新一轮空袭行动展开，巴基斯坦多地传出爆炸声，伊朗两线备战态势引发市场对原油走势的担忧。
+
+来源：<code>www.blog.ipiye.cn/Article/1139.shtml</code>
+
+### 电科数字因信披违规遭证监会行政处罚，符合索赔条件的受损投资者可依法主张权利。
+
+来源：<code>www.blog.zlwmu.cn/Article/1002.shtml</code>
+
+### 埃森哲业绩预期转弱且AI业务前景不确定，导致股价大幅下挫17%。
+
+来源：<code>www.blog.ipiye.cn/Article/89541.shtml</code>
+
+### 欧洲债市收益率曲线趋陡，英国国债表现弱于其他主要市场。
+
+来源：<code>www.blog.ipiye.cn/Article/7939702.shtml</code>
+
+### 韩国交易所宣布延后三星电子与海力士等个股的周度期权挂牌计划。
+
+来源：<code>www.blog.gnhku.cn/Article/43690.shtml</code>
+
+### 市场盘中突发急跌，超13万仓位爆仓；AI板块受利空消息打压大跌，高盛发布严厉警告。
+
+来源：<code>www.blog.baoyd.cn/Article/46666.shtml</code>
+
+### 2026年6月21日全国生猪价格参考：利好因素显现，猪价止跌回升！
+
+来源：<code>www.blog.gnhku.cn/Article/958055.shtml</code>
+
+### 多部门联合发声，表态扩大外资企业投资空间，向市场释放积极政策信号。
+
+来源：<code>www.blog.zlwmu.cn/Article/8350169.shtml</code>
+
+### 比特币失守6万美元大关，资金流向AI板块且散户参与度不高，华尔街主导下抛压由谁承接？
+
+来源：<code>www.blog.baoyd.cn/Article/25026.shtml</code>
+
+### 中金公司给予古茗“跑赢行业”评级，并设定36港元的目标价位。
+
+来源：<code>www.blog.zlwmu.cn/Article/46104.shtml</code>
+
+### 思考乐教育受托人依据股份奖励计划及信托契约，合计买入50.4万股公司股份。
+
+来源：<code>www.blog.gnhku.cn/Article/646085.shtml</code>
+
+### 联合国难民署高级官员马祖指出，全球难民危机已由短期演变为长期挑战，推动自力更生成关键解决途径。
+
+来源：<code>www.blog.gnhku.cn/Article/48483.shtml</code>
+
+### 厄尔尼诺条件已触发且强度偏强，棕榈油短期暂以反弹思路对待。
+
+来源：<code>www.blog.gnhku.cn/Article/536027.shtml</code>
+
+### 年内期货行业第三起兼并重组案例正式亮相。
+
+来源：<code>www.blog.ipiye.cn/Article/4161578.shtml</code>
+
+### 美伊启动和平谈判之际，特朗普威胁对伊朗动武，美股期指应声下行。
+
+来源：<code>www.blog.zlwmu.cn/Article/37450.shtml</code>
+
+### Zeqiao Holdings Limited（原海昌集团）减持海昌海洋公园444.1万股。
+
+来源：<code>www.blog.zlwmu.cn/Article/53806.shtml</code>
+
+### 控制权变更“一周游”再度上演，上海亚虹宣告终止控股权转让事宜。
+
+来源：<code>www.blog.gnhku.cn/Article/71914.shtml</code>
+
+### 嘉年华邮轮表示伊朗战事影响订单量，因而下调了业绩指引预期。
+
+来源：<code>www.blog.gnhku.cn/Article/5278065.shtml</code>
+
+### 防弹少年团成员闵玧其已结束入伍延期申请流程，当前服役登记手续均已办妥。
+
+来源：<code>www.blog.baoyd.cn/Article/845112.shtml</code>
+
+### 肖桂云导演荣获第33届华鼎奖终身成就奖。
+
+来源：<code>www.blog.zlwmu.cn/Article/83162.shtml</code>
+
+### 百老汇《哈利波特》舞台剧方面宣布对部分演员进行解约，更多详情尚未公开。
+
+来源：<code>www.blog.zlwmu.cn/Article/6874.shtml</code>
+
+### 《天使爱美丽》导演表示，如今已不具备拍摄同类影片的现实条件。
+
+来源：<code>www.blog.ipiye.cn/Article/19143.shtml</code>
+
+### 《爱乐之都》中相同角色同场竞技，虽赛制严苛却屡屡带来意外亮眼发挥。
+
+来源：<code>www.blog.baoyd.cn/Article/073014.shtml</code>
+
+### 第37届音乐华鼎奖主视觉海报正式发布，十大音乐类奖项名单同步公开。
+
+来源：<code>www.blog.ipiye.cn/Article/071348.shtml</code>
+
+## 二、民生社会
+
+### 安雅·泰勒-乔伊与德鲁·斯塔基合作新剧，首批现场剧照现已亮相。
+
+来源：<code>www.blog.zlwmu.cn/Article/5446.shtml</code>
+
+### 《长安的荔枝》引发观众热议，表演可圈可点，笑中带泪令人动容。
+
+来源：<code>www.blog.ipiye.cn/Article/7546.shtml</code>
+
+### 音乐节踩踏事故中年纪最小的伤者仅9岁，斯科特或自行承担赔偿费用。
+
+来源：<code>www.blog.zlwmu.cn/Article/65830.shtml</code>
+
+### 日剧《宽松世代又如何》确定拍摄电影版，定档今年10月在日本公映。
+
+来源：<code>www.blog.gnhku.cn/Article/51288.shtml</code>
+
+### 某演员新剧角色设置遭观众反感，“霸总情结”再次引发大批网友吐槽。
+
+来源：<code>www.blog.baoyd.cn/Article/289656.shtml</code>
+
+### 《我们恋爱吧3》中伊能静鼓励大家，既要大胆去爱，也要坦然面对不爱。
+
+来源：<code>www.blog.zlwmu.cn/Article/651325.shtml</code>
+
+### 《一日行》第十季回归荧屏，体育明星将分享赛场内外的精彩故事。
+
+来源：<code>www.blog.zlwmu.cn/Article/182667.shtml</code>
+
+### 《最后生还者》第二季定档播出，全新历险篇章即将拉开序幕。
+
+来源：<code>www.blog.gnhku.cn/Article/921551.shtml</code>
+
+### 《野兽派》因AI技术运用引发争议，导演针对片中口音问题作出回应。
+
+来源：<code>www.blog.gnhku.cn/Article/2478.shtml</code>
+
+### 宁财神就《满江红》情节相似一事回应：二者完全无关。
+
+来源：<code>www.blog.zlwmu.cn/Article/806902.shtml</code>
+
+### 园子温发表声明，否认所谓“冒用化名秘密复出”的不实传闻。
+
+来源：<code>www.blog.ipiye.cn/Article/8430179.shtml</code>
+
+### 《极限挑战》运动会火热开启，吴尊、张彬彬、孟鹤堂一同参与挑战。
+
+来源：<code>www.blog.baoyd.cn/Article/0143.shtml</code>
+
+### 《钢铁意志》靠真情实感征服观众，演绎获广泛好评。
+
+来源：<code>www.blog.zlwmu.cn/Article/168838.shtml</code>
+
+### 《万里归途》紧张氛围拉满，震撼大场面令观众纷纷落泪。
+
+来源：<code>www.blog.gnhku.cn/Article/0186.shtml</code>
+
+### 《时间的答卷2》聚焦支教夫妇，记录他们为山区孩子铺就知识之路的动人篇章。
+
+来源：<code>www.blog.baoyd.cn/Article/9764.shtml</code>
+
+### 《异形：地球》预告片来袭，太空威胁正一步步逼近地球。
+
+来源：<code>www.blog.gnhku.cn/Article/1709.shtml</code>
+
+### 《我们的歌5》舞台重启，老中青三代歌手共唱经典金曲。
+
+来源：<code>www.blog.baoyd.cn/Article/071424.shtml</code>
+
+### 新浪观影团邀你前往卢米埃影城，免费抢票看《外太空的莫扎特》。
+
+来源：<code>www.blog.zlwmu.cn/Article/0863901.shtml</code>
+
+### 韩红自掏腰包包场力挺《狙击手》，直言好片不该被埋没。
+
+来源：<code>www.blog.zlwmu.cn/Article/3129.shtml</code>
+
+### 《末日逼近》男星加盟新剧《回声》，将与莫娜汉联手出演。
+
+来源：<code>www.blog.gnhku.cn/Article/4601495.shtml</code>
+
+### 影迷盛赞《龙与地下城：侠盗荣耀》，称其搞笑风格十分讨巧。
+
+来源：<code>www.blog.gnhku.cn/Article/2484615.shtml</code>
+
+### 微博观影团免费放送《误判》北京首映礼门票，快来抢票参与。
+
+来源：<code>www.blog.ipiye.cn/Article/7592.shtml</code>
+
+### 《驯龙高手》首曝新剧照，小嗝嗝与阿斯翠共赴全新冒险。
+
+来源：<code>www.blog.ipiye.cn/Article/2695.shtml</code>
+
+### 历时近七个月、16场活动之后，世界电影产业大会圆满收官。
+
+来源：<code>www.blog.zlwmu.cn/Article/2257.shtml</code>
+
+### 《时光之轮》正式预告出炉，裴淳华饰演传奇法师成亮点。
+
+来源：<code>www.blog.ipiye.cn/Article/429799.shtml</code>
+
+### 张兰直播透露汪小菲关闭四家实体店，月亏高达两百万。
+
+来源：<code>www.blog.ipiye.cn/Article/71585.shtml</code>
+
+### 科幻巨制《海伯利安》电影版筹备数年，至今仍无下文。
+
+来源：<code>www.blog.ipiye.cn/Article/955883.shtml</code>
+
+### 《爆款好人》京味笑料频出，观众反馈好评不断。
+
+来源：<code>www.blog.gnhku.cn/Article/37815.shtml</code>
+
+### 张学友全新演绎《日出时让街灯安睡》，以新版迎新年。
+
+来源：<code>www.blog.baoyd.cn/Article/4011.shtml</code>
+
+### 日本翻拍版《走到尽头》来袭，冈田准一、绫野刚双雄对决。
+
+来源：<code>www.blog.ipiye.cn/Article/8343764.shtml</code>
+
+### 第34届华鼎奖最佳影片入围名单揭晓，四国作品同台竞逐
+
+来源：<code>www.blog.gnhku.cn/Article/422738.shtml</code>
+
+### 《我中国少年》第五季调整播出时间，青春音乐盛会即将登场
+
+来源：<code>www.blog.ipiye.cn/Article/4496421.shtml</code>
+
+### 肖战与杨紫私下聚餐，力挺“余生夫妇”荧幕搭档
+
+来源：<code>www.blog.zlwmu.cn/Article/603737.shtml</code>
+
+### 《点燃我，温暖你》男主频出奇招，屡次登上热搜话题
+
+来源：<code>www.blog.ipiye.cn/Article/7187951.shtml</code>
+
+### 新浪观影团开启《熊出没·重返地球》首映礼抢票活动
+
+来源：<code>www.blog.baoyd.cn/Article/91985.shtml</code>
+
+### 《里斯本丸沉没》热映中，马航家属公开向方励致谢
+
+来源：<code>www.blog.zlwmu.cn/Article/603000.shtml</code>
+
+### 奥地利古典艺术影像展将在卢米埃影城举办
+
+来源：<code>www.blog.zlwmu.cn/Article/00144.shtml</code>
+
+### 克里斯·派恩主演《宝刀未老》定于4月8日登陆流媒体平台
+
+来源：<code>www.blog.baoyd.cn/Article/8694865.shtml</code>
+
+### 杨洋受访《环球时报》时透露，演戏让自己倍感幸福
+
+来源：<code>www.blog.ipiye.cn/Article/47497.shtml</code>
+
+### 麻园诗人夺得年度最受欢迎摇滚乐队等两项殊荣
+
+来源：<code>www.blog.gnhku.cn/Article/2704.shtml</code>
+
+### 周深深圳演唱会完美落幕，首度挑战体育场大型舞台
+
+来源：<code>www.blog.zlwmu.cn/Article/3718161.shtml</code>
+
+### 冯小刚自称拍不了甜宠剧，坦言更拿手现实主义题材
+
+来源：<code>www.blog.zlwmu.cn/Article/3319.shtml</code>
+
+### 吴慷仁搞笑透露被虎头蜂蜇伤，已紧急前往医院处理
+
+来源：<code>www.blog.baoyd.cn/Article/73839.shtml</code>
+
+### 《神女》4K修复版于柏林电影节首映，惊艳全场
+
+来源：<code>www.blog.gnhku.cn/Article/9173.shtml</code>
+
+## 三、科技产业
+
+### 刘雨昕个人蜡像正式落户上海杜莎夫人蜡像馆
+
+来源：<code>www.blog.ipiye.cn/Article/96848.shtml</code>
+
+### 《绑架游戏》定档10月12日，悬疑结局即将揭晓
+
+来源：<code>www.blog.baoyd.cn/Article/2955.shtml</code>
+
+### 温情片《凡人英雄》今日上映，讲述疫情下的人性光辉
+
+来源：<code>www.blog.zlwmu.cn/Article/10902.shtml</code>
+
+### 黄轩称新剧中酒店门童角色“张光正”与自己十分契合
+
+来源：<code>www.blog.baoyd.cn/Article/1900041.shtml</code>
+
+### 经典江湖恩怨在武侠动画《笑傲江湖·曲一》中再度上演
+
+来源：<code>www.blog.gnhku.cn/Article/4758.shtml</code>
+
+### 《魔方小姐》比赛现场气氛火爆，引发观众广泛讨论
+
+来源：<code>www.blog.zlwmu.cn/Article/3614.shtml</code>
+
+### 《桃花坞》导演池源和谢涤葵揭秘15位成员的幕后花絮
+
+来源：<code>www.blog.gnhku.cn/Article/981119.shtml</code>
+
+### 两岸影视文化交流平台澳涞坞中心正式揭牌启用
+
+来源：<code>www.blog.zlwmu.cn/Article/4372087.shtml</code>
+
+### 《妈妈的神奇小子》获影迷好评，温情励志感人至深
+
+来源：<code>www.blog.gnhku.cn/Article/9717534.shtml</code>
+
+### 从“十四爷”到“霸道总裁”，林更新强调演员需贴近生活
+
+来源：<code>www.blog.zlwmu.cn/Article/3660211.shtml</code>
+
+### 日媒报道佐佐木希与渡部健关系生变，男方或告别演艺界
+
+来源：<code>www.blog.ipiye.cn/Article/6792171.shtml</code>
+
+### 《刺杀小说家2》获观众盛赞，演技与特效俱佳
+
+来源：<code>www.blog.baoyd.cn/Article/809301.shtml</code>
+
+### 新浪观影团推出《爱情神话》免费专场，抢票活动现已开启
+
+来源：<code>www.blog.gnhku.cn/Article/772919.shtml</code>
+
+### 吴卓羲谈人生哲学：拍戏全力以赴，生活随性而为
+
+来源：<code>www.blog.baoyd.cn/Article/88234.shtml</code>
+
+### 美国演员工会奖结果出炉，《秘密会议》摘得最佳影片桂冠
+
+来源：<code>www.blog.gnhku.cn/Article/11267.shtml</code>
+
+### 《阿凡达2》内地累计票房超15亿，上映已满33天
+
+来源：<code>www.blog.gnhku.cn/Article/20755.shtml</code>
+
+### 微博观影团《毕正明的证明》北京首映礼免费赠票活动
+
+来源：<code>www.blog.gnhku.cn/Article/9617809.shtml</code>
+
+### 《长空之王》真实热血故事打动无数观众
+
+来源：<code>www.blog.zlwmu.cn/Article/608975.shtml</code>
+
+### 第79届威尼斯电影节官方海报发布，传递希望寓意
+
+来源：<code>www.blog.baoyd.cn/Article/9012643.shtml</code>
+
+### 《闪耀吧！中华文明》以新颖表达方式讲述历史
+
+来源：<code>www.blog.ipiye.cn/Article/6400.shtml</code>
+
+### 《功勋》口碑爆棚，最大功劳归于功勋人物本身
+
+来源：<code>www.blog.gnhku.cn/Article/0801.shtml</code>
+
+### 《超脑少年团》赛前选手互放豪言，竞争气氛浓烈
+
+来源：<code>www.blog.baoyd.cn/Article/1820.shtml</code>
+
+### 《满江红》累计票房突破30亿，上映后话题讨论与争议热度不减
+
+来源：<code>www.blog.zlwmu.cn/Article/1248337.shtml</code>
+
+### 肯尼斯·布拉纳黑白新作预告曝光，外界质疑其风格模仿《罗马》
+
+来源：<code>www.blog.zlwmu.cn/Article/6371.shtml</code>
+
+### 凯特与莱昂纳多久违重逢激动落泪，称“杰克露丝”情谊恒久不变
+
+来源：<code>www.blog.gnhku.cn/Article/136959.shtml</code>
+
+### 平遥影展最佳男演员奖项揭晓，邹涛凭《日夜江河》摘得桂冠
+
+来源：<code>www.blog.ipiye.cn/Article/6157191.shtml</code>
+
+### 多部历史正剧蓄势待发，业内对其市场表现普遍看好
+
+来源：<code>www.blog.zlwmu.cn/Article/29306.shtml</code>
+
+### 华晨宇海口演唱会圆满落幕，舞台循环设计致敬初心再出发
+
+来源：<code>www.blog.ipiye.cn/Article/8697602.shtml</code>
+
+### 英女王97岁诞辰纪念日，王室公开温馨旧照表达追思
+
+来源：<code>www.blog.baoyd.cn/Article/05208.shtml</code>
+
+### 你要好好的”摇滚之夜火热开唱，多首经典曲目引爆全场大合唱
+
+来源：<code>www.blog.gnhku.cn/Article/456888.shtml</code>
+
+### 《安眠书店》最终季预告释出，血腥结局即将上演
+
+来源：<code>www.blog.gnhku.cn/Article/2216606.shtml</code>
+
+### 《灌篮高手》赤木刚宪角色海报公开，内地定档4月20日
+
+来源：<code>www.blog.baoyd.cn/Article/1458.shtml</code>
+
+### 新浪观影团推出《人生大事》大V专场免费票预约通道
+
+来源：<code>www.blog.zlwmu.cn/Article/4499.shtml</code>
+
+### 《奇异剧本鲨》推出限定CP组合，专为年轻群体打造交友派对
+
+来源：<code>www.blog.zlwmu.cn/Article/95272.shtml</code>
+
+### A妹露台甜蜜亲吻照曝光，与丈夫高调秀恩爱
+
+来源：<code>www.blog.baoyd.cn/Article/2735083.shtml</code>
+
+### 崔胜澈新冠康复后发文报平安，表示将努力增重健康回归
+
+来源：<code>www.blog.ipiye.cn/Article/2188.shtml</code>
+
+### 艾薇儿公开表示愿与霉霉合作，盛赞其音乐才华令人折服
+
+来源：<code>www.blog.baoyd.cn/Article/0784.shtml</code>
+
+### 第三届庐山国际爱情电影周定档8月16日正式启动
+
+来源：<code>www.blog.zlwmu.cn/Article/679146.shtml</code>
+
+### 中年偶像剧不应止步于“存在即合理”的简单逻辑
+
+来源：<code>www.blog.baoyd.cn/Article/4434.shtml</code>
+
+### 《负负得正》引发影迷热议，奇幻爱情诠释自由与浪漫内核
+
+来源：<code>www.blog.zlwmu.cn/Article/0836.shtml</code>
+
+### 布茨这位托尼奖得主携新作登场，剧情围绕一则“短信自杀”事件展开
+
+来源：<code>www.blog.ipiye.cn/Article/49643.shtml</code>
+
+### 陈泊汐从浙江远赴纽约，用说唱演绎世间百态与人间冷暖
+
+来源：<code>www.blog.zlwmu.cn/Article/31158.shtml</code>
+
+### 《蛟龙行动》映后观众反响强烈，宏大场面令人震撼又热血沸腾
+
+来源：<code>www.blog.baoyd.cn/Article/553931.shtml</code>
+
+### 太妍今天下午携新歌回归，音源《Heaven》与MV将同步释出
+
+来源：<code>www.blog.zlwmu.cn/Article/71330.shtml</code>
+
+## 四、国际热点
+
+### 新浪观影团开启《妈妈！》卢米埃影城专场抢票活动
+
+来源：<code>www.blog.gnhku.cn/Article/3502870.shtml</code>
+
+### 业内专家点评《远山花开》，称赞其风格质朴温暖且贴近现实
+
+来源：<code>www.blog.ipiye.cn/Article/46325.shtml</code>
+
+### 央华版《如梦之梦》北京站部分场次宣告取消
+
+来源：<code>www.blog.gnhku.cn/Article/62334.shtml</code>
+
+### 《国风遇见新春》贺岁档登场，集中展现中华传统东方美学魅力
+
+来源：<code>www.blog.ipiye.cn/Article/16270.shtml</code>
+
+### 谢天笑身体康复将重回舞台，后续巡演城市正面向乐迷征集意见
+
+来源：<code>www.blog.ipiye.cn/Article/0388550.shtml</code>
+
+### 成龙与彭昱畅陪你跨年，刘宇为电影《过家家》献唱插曲
+
+来源：<code>www.blog.gnhku.cn/Article/899164.shtml</code>
+
+### 马特·达蒙回忆《长城》拍摄时已觉不妙，指剧本逻辑存在欠缺
+
+来源：<code>www.blog.baoyd.cn/Article/5248.shtml</code>
+
+### 性格内敛的“梁格格”康可人，借表演来化解舞台上的紧张
+
+来源：<code>www.blog.baoyd.cn/Article/7023.shtml</code>
+
+### 新人歌手周恩洋Killa凭首支单曲《零零》正式出道
+
+来源：<code>www.blog.zlwmu.cn/Article/9424161.shtml</code>
+
+### 《白雪公主》正式预告片出炉，经典童话记忆再度被唤起
+
+来源：<code>www.blog.baoyd.cn/Article/0552385.shtml</code>
+
+### 剧版《波西·杰克逊》确认启动制作，演员海选正在火热进行中
+
+来源：<code>www.blog.gnhku.cn/Article/93075.shtml</code>
+
+### 《我可以毁掉你》女主宣布加盟漫威新作《黑豹2》
+
+来源：<code>www.blog.zlwmu.cn/Article/6013615.shtml</code>
+
+### 首届澳门国际喜剧节在横琴圆满落幕，为区域合作开启新篇章
+
+来源：<code>www.blog.baoyd.cn/Article/9557097.shtml</code>
+
+### 《沉默的真相》将改编音乐剧，原著作者紫金陈发文助阵宣传
+
+来源：<code>www.blog.ipiye.cn/Article/8093.shtml</code>
+
+### SNH48年度总决选收官，GNZ48郑丹妮斩获分团三连冠
+
+来源：<code>www.blog.gnhku.cn/Article/495425.shtml</code>
+
+### 新浪观影团《忠犬八公》首映礼免费票预约通道现已开放
+
+来源：<code>www.blog.baoyd.cn/Article/0880477.shtml</code>
+
+### 民谣唱将在“好声音”舞台圈粉无数，人气一路飙升
+
+来源：<code>www.blog.ipiye.cn/Article/776900.shtml</code>
+
+### 贾樟柯携赵涛出任2021德国电影展形象大使
+
+来源：<code>www.blog.baoyd.cn/Article/4316.shtml</code>
+
+### 《亡命救护车》观影反响热烈，视觉炸裂节奏紧凑毫无冷场
+
+来源：<code>www.blog.baoyd.cn/Article/594766.shtml</code>
+
+### 文俊辉时隔十五年再获釜山电影节最佳新人奖提名机会
+
+来源：<code>www.blog.baoyd.cn/Article/99442.shtml</code>
+
+### 《毕正明的证明》收获好评如潮，武打设计精彩故事张力十足
+
+来源：<code>www.blog.ipiye.cn/Article/439547.shtml</code>
+
+### 新浪观影团福利放送《神奇动物：邓布利多之谜》免费观影名额
+
+来源：<code>www.blog.baoyd.cn/Article/02379.shtml</code>
+
+### 《哥斯拉大战金刚3》确定导演人选，剧本已进入精修阶段
+
+来源：<code>www.blog.baoyd.cn/Article/445841.shtml</code>
+
+### 惊悚力作《死神来了：血脉诅咒》锁定8月22日公映
+
+来源：<code>www.blog.zlwmu.cn/Article/0239.shtml</code>
+
+### 看完《君子盟》：画风确实雅致，但叙事推进略显温吞
+
+来源：<code>www.blog.gnhku.cn/Article/4330806.shtml</code>
+
+### 受新冠影响，托尼奖表演类单项今年仅一名候选人
+
+来源：<code>www.blog.baoyd.cn/Article/3574568.shtml</code>
+
+### 《时光之轮》第三季全新群像海报释出，全员集结蓄势待发
+
+来源：<code>www.blog.zlwmu.cn/Article/6307.shtml</code>
+
+### 金姐为免刺激侃爷，与戴维森等多人约会时刻意低调不晒恩爱
+
+来源：<code>www.blog.baoyd.cn/Article/477928.shtml</code>
+
+### 许光汉主演《鬼家人》将代表中国台湾角逐奥斯卡最佳国际影片
+
+来源：<code>www.blog.gnhku.cn/Article/337234.shtml</code>
+
+### 斯嘉丽·约翰逊与西耶娜·米勒联袂的《我母亲的婚礼》今夏院线上映
+
+来源：<code>www.blog.gnhku.cn/Article/161293.shtml</code>
+
+### 《全民目击》续作拓展IP宇宙，《过渡空间》暑期即将登陆银幕
+
+来源：<code>www.blog.gnhku.cn/Article/2378769.shtml</code>
+
+### 以《三悦有了新工作》为起点，探索打破用户圈层的突破口
+
+来源：<code>www.blog.gnhku.cn/Article/8578.shtml</code>
+
+### 《声生不息》在主打怀旧之外，究竟能带给观众哪些新意？
+
+来源：<code>www.blog.ipiye.cn/Article/0280536.shtml</code>
+
+### 不少观众反映《这个杀手不太冷静》笑料不断，演员们的表现也相当亮眼
+
+来源：<code>www.blog.gnhku.cn/Article/805059.shtml</code>
+
+### 何超欣和何锶珩同框照片流出，赌王二房与四房之间关系显得颇为融洽
+
+来源：<code>www.blog.zlwmu.cn/Article/8893.shtml</code>
+
+### 微博观影团开启《坠落的审判》北京主创交流专场抢票通道
+
+来源：<code>www.blog.gnhku.cn/Article/6784643.shtml</code>
+
+### 霉霉提出的版权侵权撤诉请求遭法院拒绝，该案将进入庭审阶段
+
+来源：<code>www.blog.gnhku.cn/Article/12821.shtml</code>
+
+### 《烈火战车》第二季发布全新预告片，定档暑期与观众见面
+
+来源：<code>www.blog.ipiye.cn/Article/4330.shtml</code>
+
+### 新浪观影团推出《绝地追击》首映主创见面会抢票活动
+
+来源：<code>www.blog.ipiye.cn/Article/807512.shtml</code>
+
+### 电影《红丝绸》开启预售，终极预告释放浓厚谍战氛围
+
+来源：<code>www.blog.zlwmu.cn/Article/07423.shtml</code>
+
+### 高桥一生主演《岸边露伴一动不动》巴黎篇首支预告公开
+
+来源：<code>www.blog.ipiye.cn/Article/10067.shtml</code>
+
+### 张雨绮男友李柄熹跨界试水演艺圈，古装造型引发网友热烈讨论
+
+来源：<code>www.blog.gnhku.cn/Article/052503.shtml</code>
+
+### 周恩洋推出全新单曲《我要飞起来在千米外》，尝试迥异音乐风格
+
+来源：<code>www.blog.gnhku.cn/Article/003340.shtml</code>
+
+### 于文文学生时代旧照流出，厚刘海配大红花模样青涩又可爱
+
+来源：<code>www.blog.zlwmu.cn/Article/40769.shtml</code>
+
+## 五、文体娱乐
+
+### 威神V第二张正规专辑曲目预告视频将于今晚9点提前公开
+
+来源：<code>www.blog.gnhku.cn/Article/7655781.shtml</code>
+
+### 世界青年短片大赛明日启动线上展映直播活动
+
+来源：<code>www.blog.zlwmu.cn/Article/3553.shtml</code>
+
+### 当当影业携手《当代》杂志，计划把文学佳作搬上银幕
+
+来源：<code>www.blog.zlwmu.cn/Article/74548.shtml</code>
+
+### 《芭蕾女杀手》曝光幕后制作特辑，延续该系列一贯利落风格
+
+来源：<code>www.blog.gnhku.cn/Article/7053.shtml</code>
+
+### 微博观影团启动《焚城》北京首映场抢票活动
+
+来源：<code>www.blog.gnhku.cn/Article/8704126.shtml</code>
+
+### 黄渤与王一博联袂出演大鹏新作《热烈》，双bo组合令影迷倍感惊喜
+
+来源：<code>www.blog.zlwmu.cn/Article/7643.shtml</code>
+
+### 山西首家元宇宙影视基地于壶关正式揭牌启动
+
+来源：<code>www.blog.zlwmu.cn/Article/2066904.shtml</code>
+
+### 泰勒·斯威夫特2023年巡演预计11月开启售票，宏大规模令粉丝充满期待
+
+来源：<code>www.blog.baoyd.cn/Article/56815.shtml</code>
+
+### 第31届金鹰奖最佳电视综艺节目入围名单现已正式揭晓
+
+来源：<code>www.blog.zlwmu.cn/Article/4012.shtml</code>
+
+### 2022年跨年晚会各家卫视主题多样，冬奥、国潮、经典老歌等元素齐登场
+
+来源：<code>www.blog.baoyd.cn/Article/19164.shtml</code>
+
+### 演员王媛可坦言，对职场中“背奶妈妈”的辛苦感受颇深
+
+来源：<code>www.blog.gnhku.cn/Article/7883.shtml</code>
+
+### 日版《梨泰院Class》男主造型照曝光，竹内凉真担纲主演
+
+来源：<code>www.blog.zlwmu.cn/Article/83433.shtml</code>
+
+### 新浪观影团开启《密室逃生2》卢米埃影城免费抢票活动
+
+来源：<code>www.blog.ipiye.cn/Article/762374.shtml</code>
+
+### 新浪观影团《雷霆沙赞！众神之怒》免费抢票通道正式开放
+
+来源：<code>www.blog.gnhku.cn/Article/5262015.shtml</code>
+
+### 北美周末票房榜《制暴：无限杀机》首映即登顶夺冠
+
+来源：<code>www.blog.zlwmu.cn/Article/38099.shtml</code>
+
+### 观众评价《深海》：画面精美，故事温馨治愈
+
+来源：<code>www.blog.baoyd.cn/Article/992012.shtml</code>
+
+### 影迷热议《喜羊羊与灰太狼》：青春感十足，热血又励志
+
+来源：<code>www.blog.zlwmu.cn/Article/17730.shtml</code>
+
+### 《洛克中士》演员阵容生变，科林·法瑞尔正洽谈出演
+
+来源：<code>www.blog.gnhku.cn/Article/4661064.shtml</code>
+
+### 动作惊悚片《活死人大军》前传衍生作首支预告片发布
+
+来源：<code>www.blog.zlwmu.cn/Article/26696.shtml</code>
+
+### 《白雪公主》票房口碑双双遇冷，整体成绩不如预期
+
+来源：<code>www.blog.baoyd.cn/Article/9718106.shtml</code>
+
+### 第4届新时代国际电影节定于12月在澳门举行
+
+来源：<code>www.blog.gnhku.cn/Article/450125.shtml</code>
+
+### 《神偷大军》正式预告出炉，银行职员转型当劫匪
+
+来源：<code>www.blog.baoyd.cn/Article/980808.shtml</code>
+
+### 《长津湖》再次延长放映期，距离影史票房冠军只差一步
+
+来源：<code>www.blog.gnhku.cn/Article/7700.shtml</code>
+
+### 日本票房榜：《新奥特曼》首周上映即夺得冠军
+
+来源：<code>www.blog.gnhku.cn/Article/7014.shtml</code>
+
+### 泰勒为吉吉搭桥新恋情，助其摆脱与美渣分手后的消沉期
+
+来源：<code>www.blog.baoyd.cn/Article/46101.shtml</code>
+
+### 蕾哈娜发文纪念四年前在街头枪击中离世的表弟
+
+来源：<code>www.blog.zlwmu.cn/Article/473022.shtml</code>
+
+### 米娅·高斯新片预告首曝，少女主角深陷战争狂热漩涡
+
+来源：<code>www.blog.gnhku.cn/Article/94686.shtml</code>
+
+### 迪丽热巴发声悼念新疆小区火灾中不幸遇难的10人
+
+来源：<code>www.blog.zlwmu.cn/Article/18981.shtml</code>
+
+### 新浪观影团《夏日友晴天》3D版百老汇场免费抢票活动开启
+
+来源：<code>www.blog.ipiye.cn/Article/5945510.shtml</code>
+
+### 微博观影团《猎金游戏》北京首映礼免费票务正式启动
+
+来源：<code>www.blog.gnhku.cn/Article/90614.shtml</code>
+
+### 《黑袍纠察队》第五季开镜，戏外恋情与剧中仇杀交织成热议
+
+来源：<code>www.blog.gnhku.cn/Article/249248.shtml</code>
+
+### 麻园诗人翻唱《彩虹的微笑》令大张伟泪洒现场，王心凌也点赞好评
+
+来源：<code>www.blog.gnhku.cn/Article/958853.shtml</code>
+
+### 《热烈》等片获微博电影之夜年度最受期待影片殊荣
+
+来源：<code>www.blog.zlwmu.cn/Article/5120718.shtml</code>
+
+### 《帕姆的故事》正式预告发布，芮妮演绎高智商凶手角色
+
+来源：<code>www.blog.ipiye.cn/Article/061337.shtml</code>
+
+### 《白雪公主》全球票房破亿，但因跌幅过大回本依然困难
+
+来源：<code>www.blog.baoyd.cn/Article/779364.shtml</code>
+
+### 《披荆斩棘》中任贤齐、苏有朋、林峯追忆祖母时纷纷落泪
+
+来源：<code>www.blog.gnhku.cn/Article/79814.shtml</code>
+
+### 灾难大片《末日逃生2：迁移》确认引进中国内地院线
+
+来源：<code>www.blog.zlwmu.cn/Article/2905544.shtml</code>
+
+### 刘雨昕与BoA合作新歌《Better》，演绎黑白双面概念
+
+来源：<code>www.blog.gnhku.cn/Article/0506060.shtml</code>
+
+### 文化节目《斯文江南》今日首播，带观众穿越时空体味绍兴风骨
+
+来源：<code>www.blog.zlwmu.cn/Article/93815.shtml</code>
+
+### 杰瑞米·艾伦·怀特确认加盟星战新片，将为片中角色配音
+
+来源：<code>www.blog.baoyd.cn/Article/10796.shtml</code>
+
+### 《好像也没那么热血沸腾》新预告曝光，魏翔隔空喊话王子异
+
+来源：<code>www.blog.zlwmu.cn/Article/8396.shtml</code>
+
+### 《魔法坏女巫》上线流媒体后收视表现亮眼，热度持续高涨
+
+来源：<code>www.blog.baoyd.cn/Article/945936.shtml</code>
+
+### 陈都灵发文告别《良辰好景知几何》，不舍角色林杭景
+
+来源：<code>www.blog.gnhku.cn/Article/2015.shtml</code>
+
+### 满天星乐队先锋摇滚新作《黑色基因》首唱会正式亮相舞台
+
+来源：<code>www.blog.ipiye.cn/Article/5060381.shtml</code>
+
+## **AI Builders Digest** | 每日06:00自动播报 | 数据来源：新浪财经、公开媒体报道
+
+*报告生成时间：2026年07月07日15时10分43秒*
+
+*数据来源：新浪财经、公开媒体报道*
