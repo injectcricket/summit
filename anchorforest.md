@@ -1,430 +1,901 @@
-# LinkVault Resource Aggregator
+# AI Builders Digest 今日热点快报
 
-LinkVault 是一个面向技术研究者、内容创作者和知识工作者的结构化外链资源汇总系统。该项目不存储任何实际内容，而是通过人工筛选与自动化校验相结合的方式，对分散在互联网各处的优质技术文章、教程、文档与案例研究进行系统性归集与分类。项目当前维护超过两万条有效外链，覆盖计算机科学、软件工程、数据科学、运维架构与产品设计等多个领域。
+*报告生成时间：2026年07月07日15时10分43秒*
 
-LinkVault 的目标用户包括希望建立个人知识体系的技术人员、需要快速定位权威参考资料的开源贡献者，以及希望为团队搭建学习路径的架构师与技术负责人。项目通过标准化的元数据标注和可查询的目录结构，帮助用户在海量信息中快速定位到与当前问题最匹配的外部资源，显著降低信息筛选的时间成本。
+---
 
-## 功能概览
+## 一、国内时政
 
-**结构化资源索引** 对收录的每一篇外部文章按主题域、难度等级与内容类型进行标签化处理，支持按类别快速浏览。
+### 11月LPR报价出炉：1年期和5年期利率均维持不变
 
-**多维度检索支持** 提供基于标题关键词、文章编号、内容摘要以及标签组合的全文检索接口，满足精确查找与模糊匹配两种需求。
+来源：<code>www.blog.zlwmu.cn/Article/056123.shtml</code>
 
-**资源可靠性标注** 对每一条外链记录其源站域名、发布时间与内容稳定度评分，帮助用户判断资料的时效性与可信度。
+### 特斯拉中国推出Model 3和Model Y“0首付”活动
 
-**批量导入与导出** 支持通过 CSV 与 JSON 格式批量导入外部链接清单，并支持将筛选结果导出为 Markdown 或 HTML 报告。
+来源：<code>www.blog.baoyd.cn/Article/2090998.shtml</code>
 
-**每日增量更新** 项目维护每日更新的资源变更日志，记录新增链接、失效链接与内容变更链接，确保资源库的活性。
+### 短期内宁夏境内发生5.0级以上地震的可能性不大
 
-**开源协作式维护** 所有资源列表以纯文本形式存储在仓库中，社区贡献者可通过提交 Pull Request 的方式新增、修正或移除链接。
+来源：<code>www.blog.zlwmu.cn/Article/6969358.shtml</code>
 
-**本地化缓存预览** 提供可选的本地缓存机制，在配置代理或网络受限环境下仍可查看已缓存页面的标题与摘要信息。
+### 北京一家村镇银行宣布解散，今年全国已有多家村镇行退出市场
 
-**访问统计看板** 内置轻量级统计模块，按域名、分类与时间维度展示资源访问频率与用户点击热力图。
+来源：<code>www.blog.gnhku.cn/Article/19904.shtml</code>
 
-## 应用场景
+### 交通银行回应App无法转账：网络通讯故障 目前已恢复
 
-技术团队内部知识库建设
-技术团队可将 LinkVault 作为内部知识管理系统的上游数据源，通过定期同步资源索引，为团队成员提供经过预筛选的外部学习材料。团队 Leader 可以根据项目当前技术栈，从资源库中抽取相关文章组织成专题阅读清单，用于新人培训或技术攻关前的背景调研。
+来源：<code>www.blog.baoyd.cn/Article/4013358.shtml</code>
 
-技术博客与内容平台的内容策展
-技术博主或内容运营人员可以使用 LinkVault 的资源分类体系来策划系列技术专题。例如，在撰写 Kubernetes 实践系列文章时，可以通过本项目的标签系统快速找到近三年内发布的、高引用率的 K8s 相关文章，作为引用来源或延伸阅读推荐，从而增强内容的权威性与信息密度。
+### 习近平同俄罗斯总统普京共同出席“中俄文化年”开幕式暨庆祝中俄建交75周年专场音乐会并致辞
 
-学术研究与文献综述的参考源收集
-计算机领域的研究人员在开展文献调研时，除了学术数据库外，往往需要大量工程实践类的技术报告与案例分析。LinkVault 提供的按主题聚合的外链列表可作为文献综述的补充参考源，帮助研究人员快速定位到具体实现方案或性能测试数据的外部原始链接。
+来源：<code>www.blog.baoyd.cn/Article/49291.shtml</code>
 
-个人技术成长路径规划
-自学者可以利用 LinkVault 的分类树按照由浅入深的顺序逐步展开学习。例如，从基础语言特性开始，逐步过渡到框架应用、性能调优直至系统设计，每个阶段都可以在资源库中找到对应的推荐阅读材料，形成一条结构化的自学路线。
+### 浙江省2024年高考外语和选考信息确认将于4月8日启动
 
-自动化监控系统的告警上下文关联
-运维团队可以将 LinkVault 的资源编号集成到监控告警系统中。当某个组件出现特定错误码时，告警信息可附带指向 LinkVault 中对应故障排查文章的链接，缩短故障诊断的平均耗时。
+来源：<code>www.blog.baoyd.cn/Article/583919.shtml</code>
 
-## 快速开始
+### 日月谭天｜龙年春晚，岛内民众盛赞：文化盛宴！
 
-以下命令序列演示了如何从 GitHub 克隆 LinkVault 仓库、安装依赖并启动本地开发服务。
+来源：<code>www.blog.ipiye.cn/Article/75472.shtml</code>
 
-```bash
-# 克隆仓库到本地
-git clone https://github.com/linkvault/linkvault.git
+### 西安外国语大学原校长王军哲被查，卸任后校长空缺已3年
 
-# 进入项目目录
-cd linkvault
+来源：<code>www.blog.ipiye.cn/Article/706127.shtml</code>
 
-# 安装 Python 依赖（推荐使用虚拟环境）
-python -m venv venv
-source venv/bin/activate  # Windows 下使用 venv\Scripts\activate
-pip install -r requirements.txt
+### 会议间隙，省委书记等观看这部电影
 
-# 初始化本地资源索引数据库
-python manage.py migrate
-python manage.py load_resources --source data/resources_latest.json
+来源：<code>www.blog.zlwmu.cn/Article/88118.shtml</code>
 
-# 启动本地开发服务器
-python manage.py runserver --port 8000
-```
+### 深圳市分区发布暴雨橙色预警 全市进入暴雨防御状态
 
-访问 http://localhost:8000 即可开始浏览资源索引。首次启动时系统会自动从官方镜像站下载最新的资源元数据包，约含 2.3 万条记录。
+来源：<code>www.blog.zlwmu.cn/Article/658939.shtml</code>
 
-## 安装要求
+### 高校陆续迎来寒假：有的可达70天 元宵前后将集中开学
 
-| 依赖组件 | 必需版本 | 说明 |
-|---|---|---|
-| Python | 3.9 及以上 | 核心运行环境，用于后端 API 与数据管理脚本 |
-| SQLite | 3.35 及以上 | 默认元数据存储引擎，支持 JSON 字段查询 |
-| Git | 2.30 及以上 | 用于克隆仓库以及后续拉取资源更新包 |
-| pip | 21.0 及以上 | Python 包依赖管理工具 |
-| Node.js | 16.0 及以上 | 仅当启用前端开发调试模式时需要 |
-| Network | 稳定公网连接 | 用于拉取外部资源元数据及校验链接有效性 |
-| Disk Space | 至少 500 MB | 存储 SQLite 索引文件及日志文件 |
-| Memory | 建议 1 GB 以上 | 运行数据校验与批量导入任务时的内存消耗 |
+来源：<code>www.blog.zlwmu.cn/Article/19603.shtml</code>
 
-## 文档导航
+### 青海省委书记：全省的力量都在想方设法救援老百姓！
 
-| 层面 | 目录 | 回答的问题 |
-|---|---|---|
-| 用户手册 | docs/user-guide/ | 如何浏览资源分类、执行搜索、导出筛选结果以及配置本地缓存 |
-| 维护指南 | docs/maintainer/ | 如何新增资源条目、更新元数据格式、处理失效链接以及版本发布流程 |
-| 设计文档 | docs/design/ | 资源数据模型设计、标签体系规范、外部链接校验算法以及性能优化策略 |
-| API 参考 | docs/api/ | RESTful API 端点说明、请求参数格式、返回数据结构及调用示例 |
-| 部署指南 | docs/deployment/ | 生产环境部署配置、反向代理设置、数据库迁移与定时任务配置 |
-| 贡献规范 | docs/contributing/ | 提交信息格式要求、Pull Request 流程、代码风格检查与测试覆盖率标准 |
+来源：<code>www.blog.zlwmu.cn/Article/7979538.shtml</code>
 
-## 资源列表
+### 通车30年，全国最繁忙的高速公路之一，决定停止收费！
 
-本批次为第 136/280 批资源更新，共包含 250 条外部链接。以下按文章主题的初步分类列出，所有链接均保留原始格式不做任何改动。
+来源：<code>www.blog.baoyd.cn/Article/2864.shtml</code>
 
-技术实践类
+### 来了！2024年高考语文作文试题
 
-http://www.blog.cmcvrr.cn/Article/details/6167.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3395.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7543.sHtML
-http://www.blog.cmcvrr.cn/Article/details/68668.sHtML
-http://www.blog.cmcvrr.cn/Article/details/448795.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1533348.sHtML
-http://www.blog.cmcvrr.cn/Article/details/522775.sHtML
-http://www.blog.cmcvrr.cn/Article/details/590323.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2912.sHtML
-http://www.blog.cmcvrr.cn/Article/details/807145.sHtML
-http://www.blog.cmcvrr.cn/Article/details/831029.sHtML
-http://www.blog.cmcvrr.cn/Article/details/23633.sHtML
-http://www.blog.cmcvrr.cn/Article/details/667908.sHtML
-http://www.blog.cmcvrr.cn/Article/details/95068.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7993671.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3673714.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3590.sHtML
-http://www.blog.cmcvrr.cn/Article/details/55212.sHtML
-http://www.blog.cmcvrr.cn/Article/details/25768.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5583.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5428678.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3682.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2208888.sHtML
-http://www.blog.cmcvrr.cn/Article/details/843875.sHtML
-http://www.blog.cmcvrr.cn/Article/details/09590.sHtML
-http://www.blog.cmcvrr.cn/Article/details/33753.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2533.sHtML
-http://www.blog.cmcvrr.cn/Article/details/211630.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1083273.sHtML
-http://www.blog.cmcvrr.cn/Article/details/67354.sHtML
-http://www.blog.cmcvrr.cn/Article/details/00626.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2629.sHtML
-http://www.blog.cmcvrr.cn/Article/details/45419.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9567.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9896.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9795343.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8845.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2833.sHtML
-http://www.blog.cmcvrr.cn/Article/details/274581.sHtML
-http://www.blog.cmcvrr.cn/Article/details/538996.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9742260.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4781363.sHtML
-http://www.blog.cmcvrr.cn/Article/details/916259.sHtML
-http://www.blog.cmcvrr.cn/Article/details/787951.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9838858.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0260.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1143.sHtML
-http://www.blog.cmcvrr.cn/Article/details/447099.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7405.sHtML
-http://www.blog.cmcvrr.cn/Article/details/700056.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3647645.sHtML
-http://www.blog.cmcvrr.cn/Article/details/081535.sHtML
-http://www.blog.cmcvrr.cn/Article/details/08216.sHtML
-http://www.blog.cmcvrr.cn/Article/details/281464.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7010531.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9014604.sHtML
-http://www.blog.cmcvrr.cn/Article/details/189210.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2899.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4729.sHtML
-http://www.blog.cmcvrr.cn/Article/details/370677.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2024022.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3398354.sHtML
-http://www.blog.cmcvrr.cn/Article/details/514926.sHtML
-http://www.blog.cmcvrr.cn/Article/details/60766.sHtML
-http://www.blog.cmcvrr.cn/Article/details/61490.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5632.sHtML
-http://www.blog.cmcvrr.cn/Article/details/82700.sHtML
-http://www.blog.cmcvrr.cn/Article/details/92709.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2759.sHtML
-http://www.blog.cmcvrr.cn/Article/details/82902.sHtML
-http://www.blog.cmcvrr.cn/Article/details/098813.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2792989.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3120226.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8761111.sHtML
-http://www.blog.cmcvrr.cn/Article/details/28433.sHtML
+来源：<code>www.blog.zlwmu.cn/Article/6788.shtml</code>
 
-算法与数据结构专题
+### 北大回应：不要相信一个诈骗嫌犯的话！
 
-http://www.blog.cmcvrr.cn/Article/details/3307337.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6776816.sHtML
-http://www.blog.cmcvrr.cn/Article/details/79603.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7489567.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0031973.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9582.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0280.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4239.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7404.sHtML
-http://www.blog.cmcvrr.cn/Article/details/80600.sHtML
-http://www.blog.cmcvrr.cn/Article/details/863165.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1110351.sHtML
-http://www.blog.cmcvrr.cn/Article/details/09722.sHtML
-http://www.blog.cmcvrr.cn/Article/details/37860.sHtML
-http://www.blog.cmcvrr.cn/Article/details/447381.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3406103.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4163.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4023.sHtML
-http://www.blog.cmcvrr.cn/Article/details/10674.sHtML
-http://www.blog.cmcvrr.cn/Article/details/432547.sHtML
-http://www.blog.cmcvrr.cn/Article/details/231592.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1786762.sHtML
-http://www.blog.cmcvrr.cn/Article/details/09821.sHtML
-http://www.blog.cmcvrr.cn/Article/details/094462.sHtML
-http://www.blog.cmcvrr.cn/Article/details/809679.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3552326.sHtML
-http://www.blog.cmcvrr.cn/Article/details/056653.sHtML
-http://www.blog.cmcvrr.cn/Article/details/083056.sHtML
-http://www.blog.cmcvrr.cn/Article/details/80777.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1999224.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7715.sHtML
-http://www.blog.cmcvrr.cn/Article/details/60263.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7552101.sHtML
-http://www.blog.cmcvrr.cn/Article/details/55972.sHtML
-http://www.blog.cmcvrr.cn/Article/details/152419.sHtML
-http://www.blog.cmcvrr.cn/Article/details/36466.sHtML
-http://www.blog.cmcvrr.cn/Article/details/865240.sHtML
-http://www.blog.cmcvrr.cn/Article/details/696112.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7674.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2204.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0374.sHtML
-http://www.blog.cmcvrr.cn/Article/details/522061.sHtML
-http://www.blog.cmcvrr.cn/Article/details/65381.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2300104.sHtML
-http://www.blog.cmcvrr.cn/Article/details/372160.sHtML
-http://www.blog.cmcvrr.cn/Article/details/86372.sHtML
-http://www.blog.cmcvrr.cn/Article/details/74001.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4078598.sHtML
-http://www.blog.cmcvrr.cn/Article/details/64012.sHtML
-http://www.blog.cmcvrr.cn/Article/details/054405.sHtML
-http://www.blog.cmcvrr.cn/Article/details/185825.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6619349.sHtML
-http://www.blog.cmcvrr.cn/Article/details/55417.sHtML
-http://www.blog.cmcvrr.cn/Article/details/77287.sHtML
-http://www.blog.cmcvrr.cn/Article/details/81047.sHtML
-http://www.blog.cmcvrr.cn/Article/details/44665.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1608647.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8448230.sHtML
-http://www.blog.cmcvrr.cn/Article/details/409601.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2048662.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7461.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2538625.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0637323.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6808825.sHtML
-http://www.blog.cmcvrr.cn/Article/details/443800.sHtML
-http://www.blog.cmcvrr.cn/Article/details/65748.sHtML
-http://www.blog.cmcvrr.cn/Article/details/62260.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2273372.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2788.sHtML
-http://www.blog.cmcvrr.cn/Article/details/676193.sHtML
-http://www.blog.cmcvrr.cn/Article/details/40677.sHtML
-http://www.blog.cmcvrr.cn/Article/details/29278.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6122.sHtML
-http://www.blog.cmcvrr.cn/Article/details/88792.sHtML
+来源：<code>www.blog.ipiye.cn/Article/31747.shtml</code>
 
-系统架构与运维专题
+### 年轻选票如何争取？国民党在努力
 
-http://www.blog.cmcvrr.cn/Article/details/3639726.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1078872.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8564649.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8415.sHtML
-http://www.blog.cmcvrr.cn/Article/details/56032.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0333.sHtML
-http://www.blog.cmcvrr.cn/Article/details/07216.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3332.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3989251.sHtML
-http://www.blog.cmcvrr.cn/Article/details/496692.sHtML
-http://www.blog.cmcvrr.cn/Article/details/041241.sHtML
-http://www.blog.cmcvrr.cn/Article/details/244218.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0170.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9652574.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8462240.sHtML
-http://www.blog.cmcvrr.cn/Article/details/62423.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1321.sHtML
-http://www.blog.cmcvrr.cn/Article/details/064215.sHtML
-http://www.blog.cmcvrr.cn/Article/details/870254.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9291.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6755.sHtML
-http://www.blog.cmcvrr.cn/Article/details/88133.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4903476.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5742.sHtML
-http://www.blog.cmcvrr.cn/Article/details/18280.sHtML
-http://www.blog.cmcvrr.cn/Article/details/530958.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7606643.sHtML
-http://www.blog.cmcvrr.cn/Article/details/99925.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2778477.sHtML
-http://www.blog.cmcvrr.cn/Article/details/29467.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9381488.sHtML
-http://www.blog.cmcvrr.cn/Article/details/75901.sHtML
-http://www.blog.cmcvrr.cn/Article/details/34308.sHtML
-http://www.blog.cmcvrr.cn/Article/details/349401.sHtML
-http://www.blog.cmcvrr.cn/Article/details/432560.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1661526.sHtML
-http://www.blog.cmcvrr.cn/Article/details/27182.sHtML
-http://www.blog.cmcvrr.cn/Article/details/804713.sHtML
-http://www.blog.cmcvrr.cn/Article/details/15438.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7735649.sHtML
-http://www.blog.cmcvrr.cn/Article/details/293800.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5822.sHtML
-http://www.blog.cmcvrr.cn/Article/details/31336.sHtML
-http://www.blog.cmcvrr.cn/Article/details/314994.sHtML
-http://www.blog.cmcvrr.cn/Article/details/34391.sHtML
-http://www.blog.cmcvrr.cn/Article/details/17061.sHtML
-http://www.blog.cmcvrr.cn/Article/details/34026.sHtML
-http://www.blog.cmcvrr.cn/Article/details/806960.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8626024.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0377831.sHtML
-http://www.blog.cmcvrr.cn/Article/details/50109.sHtML
-http://www.blog.cmcvrr.cn/Article/details/10066.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4342.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1077.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4664575.sHtML
-http://www.blog.cmcvrr.cn/Article/details/656651.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5978.sHtML
-http://www.blog.cmcvrr.cn/Article/details/753037.sHtML
-http://www.blog.cmcvrr.cn/Article/details/02905.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4526.sHtML
-http://www.blog.cmcvrr.cn/Article/details/357998.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4241022.sHtML
-http://www.blog.cmcvrr.cn/Article/details/200203.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2264406.sHtML
-http://www.blog.cmcvrr.cn/Article/details/3126.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9439671.sHtML
-http://www.blog.cmcvrr.cn/Article/details/7137780.sHtML
-http://www.blog.cmcvrr.cn/Article/details/533048.sHtML
-http://www.blog.cmcvrr.cn/Article/details/220216.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9835.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4649.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8596581.sHtML
-http://www.blog.cmcvrr.cn/Article/details/40004.sHtML
-http://www.blog.cmcvrr.cn/Article/details/866917.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1677.sHtML
-http://www.blog.cmcvrr.cn/Article/details/67815.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6993.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5959129.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5145.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1306.sHtML
-http://www.blog.cmcvrr.cn/Article/details/2303.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5234.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1734519.sHtML
-http://www.blog.cmcvrr.cn/Article/details/16729.sHtML
-http://www.blog.cmcvrr.cn/Article/details/878684.sHtML
-http://www.blog.cmcvrr.cn/Article/details/504517.sHtML
-http://www.blog.cmcvrr.cn/Article/details/0850.sHtML
-http://www.blog.cmcvrr.cn/Article/details/39810.sHtML
-http://www.blog.cmcvrr.cn/Article/details/22241.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9103.sHtML
-http://www.blog.cmcvrr.cn/Article/details/9466.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5578.sHtML
-http://www.blog.cmcvrr.cn/Article/details/5105047.sHtML
-http://www.blog.cmcvrr.cn/Article/details/792031.sHtML
-http://www.blog.cmcvrr.cn/Article/details/6124.sHtML
-http://www.blog.cmcvrr.cn/Article/details/4694033.sHtML
-http://www.blog.cmcvrr.cn/Article/details/294848.sHtML
-http://www.blog.cmcvrr.cn/Article/details/954122.sHtML
-http://www.blog.cmcvrr.cn/Article/details/259601.sHtML
-http://www.blog.cmcvrr.cn/Article/details/1431.sHtML
-http://www.blog.cmcvrr.cn/Article/details/8263.sHtML
+来源：<code>www.blog.zlwmu.cn/Article/8285.shtml</code>
 
-## 项目结构
+### 重庆能办泼水节吗？市文旅委：不宜复制举办
 
-```
-linkvault/
-├── data/                                 # 数据存储目录
-│   ├── resources/                        # 资源元数据 JSON 分片文件
-│   ├── indices/                          # 全文索引与倒排索引文件
-│   └── snapshots/                        # 每日资源库快照备份
-├── src/                                  # 核心源代码目录
-│   ├── core/                             # 资源模型、校验器与标签引擎
-│   ├── collector/                        # 外链采集与更新调度模块
-│   ├── api/                              # RESTful API 路由与视图函数
-│   ├── web/                              # 前端静态资源与模板渲染层
-│   └── utils/                            # 通用工具函数与日志配置
-├── tests/                                # 单元测试与集成测试用例
-│   ├── unit/                             # 针对各模块的细粒度单测
-│   └── integration/                      # 端到端 API 测试与数据流测试
-├── scripts/                              # 运维与数据管理脚本
-│   ├── import_batch.py                   # 批量导入外部链接清单
-│   ├── validate_links.py                 # 校验链接可达性与内容变更
-│   └── generate_stats.py                 # 生成访问统计与健康报告
-├── docs/                                 # 完整项目文档
-│   ├── user-guide/                       # 用户操作手册与常见场景示例
-│   ├── maintainer/                       # 维护者指南与版本发布检查清单
-│   └── design/                           # 架构设计决策记录与数据流图
-├── config/                               # 环境配置与部署参数
-│   ├── development.yaml                  # 开发环境配置
-│   ├── production.yaml                   # 生产环境配置模板
-│   └── logging.yaml                      # 日志级别与输出格式定义
-├── requirements.txt                      # Python 生产环境依赖列表
-├── requirements-dev.txt                  # 开发与测试环境额外依赖
-├── manage.py                             # 项目管理命令行入口
-├── README.md                             # 项目说明文档（本文件）
-├── CONTRIBUTING.md                       # 详细贡献指南与行为准则
-└── LICENSE                               # MIT 许可证文本
-```
+来源：<code>www.blog.ipiye.cn/Article/8552.shtml</code>
 
-## 贡献指南
+### 胡明朗告别重庆公安局长岗位，前往北京履新职位。
 
-第一，在 GitHub 上 Fork 本仓库至个人账户，并克隆到本地开发环境。建议在 dev 分支上进行所有修改操作，避免直接操作 main 分支。
+来源：<code>www.blog.gnhku.cn/Article/7055.shtml</code>
 
-第二，新增资源条目时，请遵循 data/resources/schema.json 中定义的元数据格式，包括标题、原始链接、来源域名、内容摘要、标签列表及首次收录日期等字段。对于批量导入场景，可使用 scripts/import_batch.py 脚本进行格式预检。
+### 拜登称不会坐视对华电动汽车补贴不管，外交部回应将坚决维护自身权益。
 
-第三，提交代码前请运行 tests/ 目录下的全部单元测试与集成测试，确保新增内容未破坏现有检索与校验功能。测试覆盖率应维持在 85% 以上。
+来源：<code>www.blog.zlwmu.cn/Article/98661.shtml</code>
 
-第四，所有提交信息需符合 Conventional Commits 规范，即使用 feat:、fix:、docs:、chore: 等前缀清晰描述变更类型与范围。Pull Request 描述中应附带对应的资源批次编号或 Issue 链接。
+### 西藏政协前副主席姜杰被提起公诉，受贿案进入法律审理阶段。
 
-第五，对于涉及链接移除或内容分类调整的变更，需在 PR 描述中明确说明理由，例如链接失效、内容重复或分类错误。项目维护者会在 48 小时内完成审核与合并操作。
+来源：<code>www.blog.ipiye.cn/Article/686341.shtml</code>
 
-## 常见问题
+### 被免职三个月后悬念落定，该官员终遭正式立案查处。
 
-问题：项目本身是否存储外部文章的实际内容或副本？
+来源：<code>www.blog.gnhku.cn/Article/3026.shtml</code>
 
-回答：LinkVault 不存储任何外部文章的实际内容、图片或附件。项目中仅保留链接地址、标题、摘要和标签等元数据信息。所有外部内容的访问均需用户自行通过网络请求获取原始来源页面，本项目不承担任何由外部内容引发的版权或可用性责任。
+### 中央候补委员张政正式到文旅部报到，出任新职。
 
-问题：如何报告资源列表中的失效链接或错误分类？
+来源：<code>www.blog.baoyd.cn/Article/83925.shtml</code>
 
-回答：用户可以通过 GitHub Issues 提交链接失效报告或分类修正建议。建议在 Issue 标题中注明资源编号或原始 URL，并在描述中附上简要说明。项目维护者会定期处理积压的失效链接报告，并在每周的索引更新中移除连续三次校验失败的记录。
+### 知名导演车径行因病去世，年仅51岁，影视界痛失人才。
 
-问题：能否在离线环境中完整使用 LinkVault 的所有功能？
+来源：<code>www.blog.ipiye.cn/Article/01002.shtml</code>
 
-回答：核心浏览、搜索与导出功能在完成首次元数据同步后均可离线运行。但链接有效性校验、增量更新拉取以及访问统计看板中的远程图标资源需要公网连接。如需完全离线部署，可下载完整的资源索引快照文件并配置本地数据源路径，具体步骤参见 docs/deployment/offline.md。
+### 莫迪表示希望加强与台湾关系，外交部对此作出严正回应。
 
-## 许可证
+来源：<code>www.blog.gnhku.cn/Article/6122504.shtml</code>
 
-MIT License
+### 微盘股大跌似重现二月量化冲击，百亿私募称本轮情况不同以往。
 
-Copyright (c) 2026 LinkVault Contributors
+来源：<code>www.blog.baoyd.cn/Article/7540199.shtml</code>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+### 把握中美关系方向，为亚太及世界繁荣注入更多正能量。
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+来源：<code>www.blog.ipiye.cn/Article/119392.shtml</code>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### 北京倡议错峰上下班和弹性办公，发布七条应对措施。
 
-> 外链数量: 250 | 生成时间: 2026-07-05 16:28:05
+来源：<code>www.blog.gnhku.cn/Article/097220.shtml</code>
+
+### 马来西亚对华游客实行免签入境，中方对此表示欢迎态度。
+
+来源：<code>www.blog.zlwmu.cn/Article/6604756.shtml</code>
+
+### 钟南山解释肺结节检出率走高，并给出发现后的处理建议。
+
+来源：<code>www.blog.zlwmu.cn/Article/65578.shtml</code>
+
+### 世贸组织就中澳葡萄酒争端达成双方同意的和解协议。
+
+来源：<code>www.blog.zlwmu.cn/Article/7676110.shtml</code>
+
+### 一个月内，三名厅级海关系统官员相继被查落网。
+
+来源：<code>www.blog.ipiye.cn/Article/642492.shtml</code>
+
+### 刘建超在美国与国务卿布林肯会面，双方举行会谈。
+
+来源：<code>www.blog.ipiye.cn/Article/9457581.shtml</code>
+
+### 4月1日起多城取消房贷利率下限，南昌青岛九江赣州同步实施。
+
+来源：<code>www.blog.baoyd.cn/Article/91303.shtml</code>
+
+### 市民反映问题后，市长连夜赶赴现场调研处理。
+
+来源：<code>www.blog.gnhku.cn/Article/1652.shtml</code>
+
+### 环球时报社评：中国反倾销调查让谁感到担忧？
+
+来源：<code>www.blog.zlwmu.cn/Article/6653.shtml</code>
+
+### 央企负责人年度薪酬数据由国资委发布
+
+来源：<code>www.blog.gnhku.cn/Article/1524.shtml</code>
+
+### 京沪及京广高铁部分车次将实行限速措施
+
+来源：<code>www.blog.gnhku.cn/Article/0676.shtml</code>
+
+### 多位省级官员携企业高管赴京出席重要活动
+
+来源：<code>www.blog.gnhku.cn/Article/26425.shtml</code>
+
+### 多地启动存量新房收购转为保障房，业内料交付提速
+
+来源：<code>www.blog.ipiye.cn/Article/565047.shtml</code>
+
+### 王毅会见沙特与伊朗联合代表团成员
+
+来源：<code>www.blog.gnhku.cn/Article/6601746.shtml</code>
+
+### 外交部就王毅是否可能与拜登会面作出回应
+
+来源：<code>www.blog.ipiye.cn/Article/237822.shtml</code>
+
+### 牛弹琴称一则短消息让人感到十分振奋
+
+来源：<code>www.blog.baoyd.cn/Article/98024.shtml</code>
+
+### 阿里内网发声，否认马云减持公司股票
+
+来源：<code>www.blog.ipiye.cn/Article/3147934.shtml</code>
+
+## 二、民生社会
+
+### 南方电网纪检组长龙飞被查，正接受审查调查
+
+来源：<code>www.blog.baoyd.cn/Article/1337.shtml</code>
+
+### 中国足协宣布水庆霞不再执掌女足国家队帅印
+
+来源：<code>www.blog.baoyd.cn/Article/2072402.shtml</code>
+
+### 中央气象台首发冻雨橙色预警，南方冰冻天气或持续至2月4日
+
+来源：<code>www.blog.baoyd.cn/Article/079840.shtml</code>
+
+### 贵州政协原副主席陈晏被查，上月还曾公开活动
+
+来源：<code>www.blog.ipiye.cn/Article/2225463.shtml</code>
+
+### 李铁案时间线全景梳理，一图看懂全案脉络
+
+来源：<code>www.blog.gnhku.cn/Article/023201.shtml</code>
+
+### 专家呼吁向全民发放千元现金红包以刺激消费
+
+来源：<code>www.blog.zlwmu.cn/Article/8247.shtml</code>
+
+### 何立峰部署重点改革任务，释放政策新动向信号
+
+来源：<code>www.blog.baoyd.cn/Article/1600.shtml</code>
+
+### 证监会强调严打违法行为，让违规者付出应有代价
+
+来源：<code>www.blog.baoyd.cn/Article/6773.shtml</code>
+
+### 孙颖莎和王艺迪双双落败，国乒女线遭遇罕见滑铁卢
+
+来源：<code>www.blog.baoyd.cn/Article/5647.shtml</code>
+
+### 湖南省委书记暗访洞庭湖博物馆，7.8亿投资已闲置多年
+
+来源：<code>www.blog.zlwmu.cn/Article/025256.shtml</code>
+
+### 儿科门诊候诊序号已破两千，专家预警流感即将进入高发期
+
+来源：<code>www.blog.ipiye.cn/Article/819120.shtml</code>
+
+### 王毅与沙特外交大臣费萨尔举行电话会谈
+
+来源：<code>www.blog.ipiye.cn/Article/51259.shtml</code>
+
+### 陈吉宁、袁家军、韩俊、王宁等人分别就相关工作作出部署
+
+来源：<code>www.blog.ipiye.cn/Article/2594.shtml</code>
+
+### 河南遭遇10级强风袭击，树木被连根拔起，麦田大面积倒伏
+
+来源：<code>www.blog.gnhku.cn/Article/065817.shtml</code>
+
+### 2024年2月内地电影总票房已超10亿元人民币
+
+来源：<code>www.blog.gnhku.cn/Article/4940386.shtml</code>
+
+### 外交部通报：法塔赫与哈马斯在京磋商获积极成果
+
+来源：<code>www.blog.ipiye.cn/Article/0698822.shtml</code>
+
+### 北京将今年地区生产总值增速目标定为5%左右
+
+来源：<code>www.blog.baoyd.cn/Article/1536606.shtml</code>
+
+### 最新FIFA排名：国足保持亚洲第11、世界第79位不变
+
+来源：<code>www.blog.zlwmu.cn/Article/0630337.shtml</code>
+
+### 赵少康称国民党从未“亲共”，国台办对此作出回应
+
+来源：<code>www.blog.gnhku.cn/Article/7087.shtml</code>
+
+### 广东发文明确：广州深圳将适度放宽小客车购车指标申请条件
+
+来源：<code>www.blog.baoyd.cn/Article/54303.shtml</code>
+
+### 江西本月已发生4起雷击事件，造成3人死亡3人受伤
+
+来源：<code>www.blog.ipiye.cn/Article/6359151.shtml</code>
+
+### 李强在新疆调研期间释放两大关键政策信号
+
+来源：<code>www.blog.gnhku.cn/Article/4190.shtml</code>
+
+### 高温红色预警持续生效，河北部分地区最高温或超40℃
+
+来源：<code>www.blog.baoyd.cn/Article/397141.shtml</code>
+
+### 李强将参加二十国集团领导人视频峰会
+
+来源：<code>www.blog.baoyd.cn/Article/6990481.shtml</code>
+
+### 一季度餐饮业对消费增长贡献明显，但中端餐饮面临较大经营压力
+
+来源：<code>www.blog.zlwmu.cn/Article/1055898.shtml</code>
+
+### 湖北大悟县百余村民被冒名注册工商个体户，当地已启动调查程序
+
+来源：<code>www.blog.gnhku.cn/Article/2951.shtml</code>
+
+### 上海至欧洲航线运费涨幅超300%，数据源自上海航运交易所
+
+来源：<code>www.blog.gnhku.cn/Article/6233745.shtml</code>
+
+### 政治局会议部署应对经济复苏中面临的多重挑战
+
+来源：<code>www.blog.baoyd.cn/Article/88598.shtml</code>
+
+### 李克强同志与世长辞
+
+来源：<code>www.blog.ipiye.cn/Article/5664576.shtml</code>
+
+### 相隔四十五载，六位姐弟重聚故宅门槛前合影留念
+
+来源：<code>www.blog.zlwmu.cn/Article/912906.shtml</code>
+
+### 中央财政拨付64.4亿元，支持2024年老旧汽车报废更新补贴
+
+来源：<code>www.blog.ipiye.cn/Article/26705.shtml</code>
+
+### 国安部长陈一新展开为期十天首次外访，释放重要信号
+
+来源：<code>www.blog.baoyd.cn/Article/7880710.shtml</code>
+
+### 国台办首现女性副主任，新人事布局引发关注
+
+来源：<code>www.blog.gnhku.cn/Article/52401.shtml</code>
+
+### 多地“520”结婚登记量较去年攀升，婚恋观是否在回暖？
+
+来源：<code>www.blog.ipiye.cn/Article/4082.shtml</code>
+
+### 台积电董事长直言，将工厂全数迁离台湾并不现实
+
+来源：<code>www.blog.gnhku.cn/Article/30489.shtml</code>
+
+### 多部门联合工作组酝酿房地产新政，调整力度或较大
+
+来源：<code>www.blog.gnhku.cn/Article/12736.shtml</code>
+
+### 学者指出，农民放弃医保背后的制度性隐忧甚于经济压力
+
+来源：<code>www.blog.gnhku.cn/Article/6283.shtml</code>
+
+### 税务总局称，全国统一大市场建设正加速落地
+
+来源：<code>www.blog.gnhku.cn/Article/760138.shtml</code>
+
+### 购林俊杰演唱会票却变林子祥场次，大麦网就换票事件作出说明
+
+来源：<code>www.blog.ipiye.cn/Article/4654310.shtml</code>
+
+### 省委书记暗访途中，临时通知相关责任干部赶赴现场
+
+来源：<code>www.blog.ipiye.cn/Article/6421.shtml</code>
+
+### 甘肃夏河山火灾情已完全扑灭，现场再无明火与烟点
+
+来源：<code>www.blog.ipiye.cn/Article/0704810.shtml</code>
+
+### 4月LPR最新报价公布，一年期与五年期利率均维持不变
+
+来源：<code>www.blog.baoyd.cn/Article/20127.shtml</code>
+
+### AI手机概念遭资金热炒，多家A股公司急忙发布澄清公告
+
+来源：<code>www.blog.zlwmu.cn/Article/8345.shtml</code>
+
+### 国防部就中国军力位列全球第三的排名作出回应
+
+来源：<code>www.blog.zlwmu.cn/Article/6360272.shtml</code>
+
+## 三、科技产业
+
+### 台湾彰化籍人士江尔雄履新福建省副省长职务
+
+来源：<code>www.blog.zlwmu.cn/Article/07546.shtml</code>
+
+### 港媒报道，香港拟下调部分住宅印花税并上调烟草税
+
+来源：<code>www.blog.baoyd.cn/Article/8420.shtml</code>
+
+### 全国人大代表提交议案，主张把抑郁症治疗费纳入国家医保支付范围
+
+来源：<code>www.blog.gnhku.cn/Article/2266.shtml</code>
+
+### 10月各地CPI涨幅出炉：20省环比下降，贵州河南山西同比连降7个月
+
+来源：<code>www.blog.zlwmu.cn/Article/21791.shtml</code>
+
+### 江西发布地质灾害气象风险预警，部分区域风险等级较高
+
+来源：<code>www.blog.gnhku.cn/Article/6743.shtml</code>
+
+### 公安部表态将严打网红大V造谣传谣等网络乱象
+
+来源：<code>www.blog.ipiye.cn/Article/1020.shtml</code>
+
+### 北京新冠疫情仍处流行期，流感活动水平已明显下降
+
+来源：<code>www.blog.gnhku.cn/Article/9662335.shtml</code>
+
+### 江西境内因强对流天气中断的铁路线路正有序恢复通车
+
+来源：<code>www.blog.baoyd.cn/Article/0262.shtml</code>
+
+### 商务部副部长透露正研究新能源车保费费率下调可行方案
+
+来源：<code>www.blog.gnhku.cn/Article/65129.shtml</code>
+
+### 2023年全国公安机关共破获电信网络诈骗案件43.7万起
+
+来源：<code>www.blog.zlwmu.cn/Article/468425.shtml</code>
+
+### 全国少工委就红领巾规范佩戴方法作出官方说明
+
+来源：<code>www.blog.gnhku.cn/Article/9833.shtml</code>
+
+### 西湖湖面出现结冰：全球变暖背景下为何仍有强寒潮
+
+来源：<code>www.blog.gnhku.cn/Article/565597.shtml</code>
+
+### 全球该领域近九成订单目前由中国企业拿下
+
+来源：<code>www.blog.baoyd.cn/Article/97490.shtml</code>
+
+### 台军自造潜艇举行出厂仪式，计划近期进行下水作业
+
+来源：<code>www.blog.ipiye.cn/Article/4000831.shtml</code>
+
+### 应急管理部部署全面排查整治各类消防安全隐患
+
+来源：<code>www.blog.baoyd.cn/Article/507414.shtml</code>
+
+### 山东青岛市政协原副主席杨锡祥涉嫌违纪违法被审查
+
+来源：<code>www.blog.baoyd.cn/Article/6718.shtml</code>
+
+### 2023年中国职业教育发展质量处于何种水平
+
+来源：<code>www.blog.baoyd.cn/Article/3849677.shtml</code>
+
+### 沈阳一居民楼疑因液化气罐爆炸致1死3伤
+
+来源：<code>www.blog.ipiye.cn/Article/8135859.shtml</code>
+
+### 最高法新规要求离婚案件须重视未成年子女权益保护
+
+来源：<code>www.blog.ipiye.cn/Article/066997.shtml</code>
+
+### 神十八航天员李广苏：航天员只有满分，没有及格线
+
+来源：<code>www.blog.gnhku.cn/Article/83610.shtml</code>
+
+### 中美两国元首将围绕双边关系的战略全局和方向性问题展开深入沟通
+
+来源：<code>www.blog.ipiye.cn/Article/415677.shtml</code>
+
+### 全国将重点排查三类高风险消防场所，汲取江西新余和河南南阳火灾事故教训
+
+来源：<code>www.blog.zlwmu.cn/Article/3210.shtml</code>
+
+### 张文宏就今年冬季呼吸道感染高发原因回应公众关切
+
+来源：<code>www.blog.baoyd.cn/Article/501385.shtml</code>
+
+### 万亿GDP城市再添新成员，全国总数升至26座
+
+来源：<code>www.blog.baoyd.cn/Article/46782.shtml</code>
+
+### 交通运输部出台自动驾驶汽车运输安全管理试行规范
+
+来源：<code>www.blog.zlwmu.cn/Article/70863.shtml</code>
+
+### 恒大创全球财务造假新纪录，5600亿元资金操作手法引发广泛关注
+
+来源：<code>www.blog.baoyd.cn/Article/704536.shtml</code>
+
+### 官方就四条高铁票价调整依据及考虑因素进行说明
+
+来源：<code>www.blog.ipiye.cn/Article/620269.shtml</code>
+
+### 四川青川县发生3.1级地震，震源深度10千米
+
+来源：<code>www.blog.baoyd.cn/Article/86621.shtml</code>
+
+### 刘国中南下部署改革工作，以更好适应当前新形势要求
+
+来源：<code>www.blog.baoyd.cn/Article/690481.shtml</code>
+
+### 多地网友建议本地文旅借鉴哈尔滨经验，官方陆续作出回应
+
+来源：<code>www.blog.zlwmu.cn/Article/9264.shtml</code>
+
+### 我国成功发射极光星座双星及另外三颗卫星
+
+来源：<code>www.blog.gnhku.cn/Article/997182.shtml</code>
+
+### 11月中国经济显现回暖态势，三大产业指标均有改善
+
+来源：<code>www.blog.ipiye.cn/Article/14222.shtml</code>
+
+### 国家发改委表示将出台一揽子稳预期、促增长、保就业政策
+
+来源：<code>www.blog.baoyd.cn/Article/542667.shtml</code>
+
+### 春节前国内油价或再次上调，1月31日迎来新一轮调价窗口
+
+来源：<code>www.blog.baoyd.cn/Article/5326.shtml</code>
+
+### 龙年首个交易日港股低开后震荡走高，后市表现取决于一季度经济数据
+
+来源：<code>www.blog.baoyd.cn/Article/12494.shtml</code>
+
+### 35岁的郑若琰获得新职务任命
+
+来源：<code>www.blog.ipiye.cn/Article/597977.shtml</code>
+
+### 马宁将执法亚洲杯决赛，实现中国裁判界历史性突破
+
+来源：<code>www.blog.ipiye.cn/Article/4282.shtml</code>
+
+### 专家就肺炎支原体感染常见问题作出详细解答
+
+来源：<code>www.blog.baoyd.cn/Article/2185.shtml</code>
+
+### 证监会新规集中落地，同日四家企业撤材料
+
+来源：<code>www.blog.ipiye.cn/Article/4315148.shtml</code>
+
+### 八家央企外部董事近期集中调整
+
+来源：<code>www.blog.zlwmu.cn/Article/08823.shtml</code>
+
+### 中核环保前董事长吴秀江遭立案审查
+
+来源：<code>www.blog.gnhku.cn/Article/1798.shtml</code>
+
+### 年内成品油调价或首降，幅度逼近红线
+
+来源：<code>www.blog.baoyd.cn/Article/345423.shtml</code>
+
+### 最高检表态严打养老诈骗虚假诉讼链
+
+来源：<code>www.blog.baoyd.cn/Article/561185.shtml</code>
+
+### 靳东履新煤矿文工团团长后首度露面
+
+来源：<code>www.blog.zlwmu.cn/Article/536374.shtml</code>
+
+## 四、国际热点
+
+### 武磊韦世豪国足先发，韩国孙兴慜金玟哉出战
+
+来源：<code>www.blog.zlwmu.cn/Article/6916350.shtml</code>
+
+### 回望2023，大国重器震撼时刻再燃
+
+来源：<code>www.blog.ipiye.cn/Article/2753685.shtml</code>
+
+### 苗栗小吃店火警致5死1伤
+
+来源：<code>www.blog.gnhku.cn/Article/4151576.shtml</code>
+
+### 三大指数小幅上扬，沪指月内反弹近15%
+
+来源：<code>www.blog.baoyd.cn/Article/19467.shtml</code>
+
+### 曾赞荣任青岛市委书记，系中央候补委员
+
+来源：<code>www.blog.zlwmu.cn/Article/96099.shtml</code>
+
+### 国产操作系统生态提速，超50家A股公司入局
+
+来源：<code>www.blog.gnhku.cn/Article/0641.shtml</code>
+
+### 江西发暴雨黄色预警，局地雨量超50毫米
+
+来源：<code>www.blog.gnhku.cn/Article/0061281.shtml</code>
+
+### 重庆任职多年近七旬“老虎”被公诉，案情首披露
+
+来源：<code>www.blog.ipiye.cn/Article/3080.shtml</code>
+
+### 湖南班主任性侵女生致死案，监狱两度申请再审
+
+来源：<code>www.blog.ipiye.cn/Article/2569.shtml</code>
+
+### 明年起我国部分进出口商品税率调整
+
+来源：<code>www.blog.baoyd.cn/Article/8883.shtml</code>
+
+### 海外资管巨头加速在华募资
+
+来源：<code>www.blog.ipiye.cn/Article/8560149.shtml</code>
+
+### 刘结一任全国政协十四届二次会议发言人
+
+来源：<code>www.blog.baoyd.cn/Article/205325.shtml</code>
+
+### 贵州旅投集团前工会主席吴静因廉洁问题被检察机关批准逮捕
+
+来源：<code>www.blog.gnhku.cn/Article/0423245.shtml</code>
+
+### 深圳部分二手房小区价格暴跌60%，这些区域曾遭投资客疯狂炒作
+
+来源：<code>www.blog.baoyd.cn/Article/749889.shtml</code>
+
+### 恒大地产再被法院强制执行28亿元，累计被执行金额已超544亿元
+
+来源：<code>www.blog.baoyd.cn/Article/205051.shtml</code>
+
+### 新一场“部长通道”活动亮相，释放出诸多关键政策信号
+
+来源：<code>www.blog.baoyd.cn/Article/17711.shtml</code>
+
+### 强降雨致广东平远县约1.25万人受灾，近千处道路发生塌方
+
+来源：<code>www.blog.gnhku.cn/Article/8787597.shtml</code>
+
+### 中央批准钱三雄出任安徽省委常委
+
+来源：<code>www.blog.zlwmu.cn/Article/2597270.shtml</code>
+
+### 百岁基辛格去世，中国民众对他为何有特殊情感
+
+来源：<code>www.blog.zlwmu.cn/Article/0543993.shtml</code>
+
+### 浙江缙云警方通报重大刑案在逃人员，其20多年前曾在广州杀害女友
+
+来源：<code>www.blog.zlwmu.cn/Article/03582.shtml</code>
+
+### 台湾一小时内发生10次地震，均为花莲强震的余震
+
+来源：<code>www.blog.ipiye.cn/Article/6034.shtml</code>
+
+### 陆家嘴七年前以85亿购得“毒地”，向苏钢集团索赔百亿已获法院立案
+
+来源：<code>www.blog.zlwmu.cn/Article/023090.shtml</code>
+
+### 英国首相发文称，邀请中国参加该会议是“完全正确的决定
+
+来源：<code>www.blog.baoyd.cn/Article/4791296.shtml</code>
+
+### 被315晚会曝光的灭火器企业回应，否认曾生产非标产品
+
+来源：<code>www.blog.gnhku.cn/Article/69486.shtml</code>
+
+### 北京市第十六届人大二次会议圆满闭幕
+
+来源：<code>www.blog.gnhku.cn/Article/76444.shtml</code>
+
+### 朱立伦与侯友宜达成共识，拟将韩国瑜列国民党不分区民代首位，形同“保送
+
+来源：<code>www.blog.gnhku.cn/Article/8735.shtml</code>
+
+### 东部战区组织导弹快艇开展实战化训练，以提升作战能力
+
+来源：<code>www.blog.zlwmu.cn/Article/47018.shtml</code>
+
+### 辽宁省委书记与省长公开表示：山海关不再难闯，欢迎来辽投资
+
+来源：<code>www.blog.ipiye.cn/Article/578312.shtml</code>
+
+### 土地市场降温，“数据城投”正加快入场布局
+
+来源：<code>www.blog.zlwmu.cn/Article/871235.shtml</code>
+
+### 中央金融工作会议在北京召开
+
+来源：<code>www.blog.gnhku.cn/Article/540035.shtml</code>
+
+### 黑龙江佳木斯：认真吸取桦南县体育馆坍塌事件教训
+
+来源：<code>www.blog.baoyd.cn/Article/3447.shtml</code>
+
+### 中央气象台：东北降雪即将结束，中东部大部地区气温回暖
+
+来源：<code>www.blog.zlwmu.cn/Article/07584.shtml</code>
+
+### 新任省委副书记后，这位中央候补委员又添新职务
+
+来源：<code>www.blog.ipiye.cn/Article/6632223.shtml</code>
+
+### 省委书记赴一线调研，省长提出明确要求，现场已成立应急指挥部
+
+来源：<code>www.blog.baoyd.cn/Article/5852783.shtml</code>
+
+### 外交部回应中国何时能成为“发达国家
+
+来源：<code>www.blog.baoyd.cn/Article/609742.shtml</code>
+
+### 五名高管同一天辞职，这家金融机构出了什么问题？
+
+来源：<code>www.blog.zlwmu.cn/Article/6652893.shtml</code>
+
+### 尼格买提回应春晚失误：“碎碎平安，我先碎了
+
+来源：<code>www.blog.zlwmu.cn/Article/48202.shtml</code>
+
+### 国民党“立委”宣布组团前往大陆交流
+
+来源：<code>www.blog.baoyd.cn/Article/973444.shtml</code>
+
+### 时隔四年半，中日韩领导人会议重启，传递出什么信号？
+
+来源：<code>www.blog.gnhku.cn/Article/899322.shtml</code>
+
+### 云南大理森林火灾已扑灭，未造成人员伤亡
+
+来源：<code>www.blog.ipiye.cn/Article/0446.shtml</code>
+
+### 重磅！证监会连续发布四项政策文件
+
+来源：<code>www.blog.zlwmu.cn/Article/6693.shtml</code>
+
+### 美国试图拉拢盟友加强对华芯片限制，遇到阻力
+
+来源：<code>www.blog.ipiye.cn/Article/5584681.shtml</code>
+
+### 八天春节长假，中国游客足迹遍及全球1700多座城市
+
+来源：<code>www.blog.ipiye.cn/Article/5359.shtml</code>
+
+### 王毅与乌克兰外长会谈，五个不寻常细节引发外界关注
+
+来源：<code>www.blog.ipiye.cn/Article/693555.shtml</code>
+
+## 五、文体娱乐
+
+### 央视海峡时评：“赖萧配”是“双独组合”，只会将台湾推向危险境地
+
+来源：<code>www.blog.ipiye.cn/Article/40744.shtml</code>
+
+### 中国海警局启动“净海2024”行动，严厉打击海上走私活动
+
+来源：<code>www.blog.zlwmu.cn/Article/2212640.shtml</code>
+
+### 多种传染病高发季，孩子发烧如何高效就医？流程详解
+
+来源：<code>www.blog.zlwmu.cn/Article/4633.shtml</code>
+
+### 总理主持召开座谈会，8人受邀，多位部长参加
+
+来源：<code>www.blog.ipiye.cn/Article/982233.shtml</code>
+
+### 中国海警船只在黄岩岛邻近海域启动医疗巡诊服务，现场影像资料同步公开
+
+来源：<code>www.blog.ipiye.cn/Article/5616438.shtml</code>
+
+### 成都新增直飞奥克兰洲际航线，全程航行时间约为12小时
+
+来源：<code>www.blog.zlwmu.cn/Article/8150.shtml</code>
+
+### A股沪指失守2800点关口，背后究竟有哪些因素推动？
+
+来源：<code>www.blog.zlwmu.cn/Article/00116.shtml</code>
+
+### 外媒消息称，波音公司向中国交付客机的进度再次遭遇推迟
+
+来源：<code>www.blog.ipiye.cn/Article/154163.shtml</code>
+
+### 台军首批一年期义务役新兵正式入伍，家属担忧未来可能被派往作战一线
+
+来源：<code>www.blog.ipiye.cn/Article/987629.shtml</code>
+
+### 叶剑英元帅夫人吴博离世，享年106岁高龄
+
+来源：<code>www.blog.zlwmu.cn/Article/241045.shtml</code>
+
+### 美国国务院新设专项工作小组，负责向各国提供针对中国的策略建议
+
+来源：<code>www.blog.gnhku.cn/Article/5762909.shtml</code>
+
+### 强冷空气即将来袭，气象专家解读剧烈降温背后的形成机制
+
+来源：<code>www.blog.gnhku.cn/Article/195783.shtml</code>
+
+### 林文学履新最高人民法院办公厅主任职务
+
+来源：<code>www.blog.ipiye.cn/Article/5087062.shtml</code>
+
+### 文化和旅游部部长与美国驻华大使举行面对面会晤
+
+来源：<code>www.blog.ipiye.cn/Article/92092.shtml</code>
+
+### 人民体坛评论：梅西伤病事件暴露商业赛事运作中的潜在风险
+
+来源：<code>www.blog.ipiye.cn/Article/5464419.shtml</code>
+
+### 旭日8409航班经历28分钟空中突发状况，完整过程被披露
+
+来源：<code>www.blog.zlwmu.cn/Article/3065510.shtml</code>
+
+### 六大国有银行近期集中释放多项政策动向信号
+
+来源：<code>www.blog.zlwmu.cn/Article/2232610.shtml</code>
+
+### 市领导集体观看《新闻联播》画面引发外界多方猜测
+
+来源：<code>www.blog.gnhku.cn/Article/0896.shtml</code>
+
+### 斥资6亿元通过可转债方式入局，神秘资本方跃升为江阴银行第一大股东
+
+来源：<code>www.blog.baoyd.cn/Article/6078130.shtml</code>
+
+### 新冠疫苗生产线已全面停产，现行接种点安排及补种必要性详细说明
+
+来源：<code>www.blog.ipiye.cn/Article/8907248.shtml</code>
+
+### 天津南开区发布最新小学转学及初中入学政策调整方案
+
+来源：<code>www.blog.zlwmu.cn/Article/1667714.shtml</code>
+
+### 美国防务分析师指出，中国在部分武器技术领域已领先美俄
+
+来源：<code>www.blog.baoyd.cn/Article/63218.shtml</code>
+
+### 国内成品油价格连续第五次下调，加满一箱油大约少花2元
+
+来源：<code>www.blog.zlwmu.cn/Article/27230.shtml</code>
+
+### 中国广义货币余额突破300万亿，这一数据背后传递怎样的经济含义
+
+来源：<code>www.blog.gnhku.cn/Article/0171617.shtml</code>
+
+### 吴清表态称，若市场出现非理性大跌，将果断采取干预措施
+
+来源：<code>www.blog.ipiye.cn/Article/1904.shtml</code>
+
+### 通过对150个城市的数据分析，揭示幼儿园关闭潮集中地区
+
+来源：<code>www.blog.zlwmu.cn/Article/4121596.shtml</code>
+
+### 证监会发出严厉警告，将严厉打击市场操纵和恶意做空行为
+
+来源：<code>www.blog.zlwmu.cn/Article/9720.shtml</code>
+
+### 涉“七个有之”问题的前高官受审，涉案金额超亿元
+
+来源：<code>www.blog.zlwmu.cn/Article/5252.shtml</code>
+
+### 上海深圳调整住房“7090”政策，对楼市将带来哪些变化
+
+来源：<code>www.blog.gnhku.cn/Article/6710451.shtml</code>
+
+### 2024年北京新年倒计时活动期间，周边道路将实施临时交通限行
+
+来源：<code>www.blog.gnhku.cn/Article/4308.shtml</code>
+
+### 4月首个交易日A股高开，券商板块涨幅居前
+
+来源：<code>www.blog.gnhku.cn/Article/8855443.shtml</code>
+
+### TikTok计划起诉美国政府，指控其侵犯1.7亿用户的言论自由权
+
+来源：<code>www.blog.ipiye.cn/Article/946800.shtml</code>
+
+### 小学生作文中表达“想当行长”愿望，农发行对此作出回应
+
+来源：<code>www.blog.baoyd.cn/Article/0222961.shtml</code>
+
+### 马英九卸任礼遇期满，由8名警员轮值负责其安保工作
+
+来源：<code>www.blog.ipiye.cn/Article/5494.shtml</code>
+
+### 国家安全部通报一起泄露反间谍工作秘密的案件
+
+来源：<code>www.blog.ipiye.cn/Article/438091.shtml</code>
+
+### 全球首个AI程序员正式问世，人类程序员是否面临失业风险
+
+来源：<code>www.blog.gnhku.cn/Article/4189145.shtml</code>
+
+### 证监会主席吴清再度推出新的监管措施
+
+来源：<code>www.blog.ipiye.cn/Article/211628.shtml</code>
+
+### 杭州取消全市住房限购政策，购房资格审核不再执行
+
+来源：<code>www.blog.baoyd.cn/Article/88145.shtml</code>
+
+### 除夕当日李强总理安排了一项特殊行程
+
+来源：<code>www.blog.ipiye.cn/Article/09349.shtml</code>
+
+### 西北地区长期竞争的两座城市如今携手合作，展现出强劲实力
+
+来源：<code>www.blog.ipiye.cn/Article/7796514.shtml</code>
+
+### 今日全国多省市开启考研查分通道，2024年国家线即将公布
+
+来源：<code>www.blog.gnhku.cn/Article/7499.shtml</code>
+
+### 北京今晨气温骤降至零下7.3度，刷新历史同日最低纪录
+
+来源：<code>www.blog.gnhku.cn/Article/5637.shtml</code>
+
+### 华侨城集团遭三部门联合约谈监管
+
+来源：<code>www.blog.ipiye.cn/Article/6429.shtml</code>
+
+### 江启臣经两轮投票胜出，出任台立法机构副院长一职
+
+来源：<code>www.blog.gnhku.cn/Article/3516541.shtml</code>
+
+## **AI Builders Digest** | 每日06:00自动播报 | 数据来源：新浪财经、公开媒体报道
+
+*报告生成时间：2026年07月07日15时10分43秒*
+
+*数据来源：新浪财经、公开媒体报道*
